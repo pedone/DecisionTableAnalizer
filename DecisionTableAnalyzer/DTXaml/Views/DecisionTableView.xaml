@@ -1,0 +1,198 @@
+﻿<DockingLibrary:View x:Class="DTXaml.Views.DecisionTableView"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:converters="clr-namespace:DTXaml.Converters"
+                     xmlns:DockingLibrary="clr-namespace:DockingLibrary;assembly=DockingLibrary"
+                     xmlns:dtcore="clr-namespace:DTCore;assembly=DTCore"
+                     xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+                     Header="{Binding Name,
+                                      StringFormat='Decision Table - {0}',
+                                      FallbackValue='Decision Table'}">
+    <DockingLibrary:View.Resources>
+
+        <converters:DTRowBackgroundConverter x:Key="DTRowBackgroundConverter" />
+
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Margin" Value="5,3" />
+            <Setter Property="MinWidth" Value="140" />
+        </Style>
+    </DockingLibrary:View.Resources>
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+
+            <DataGrid AutoGenerateColumns="False"
+                      CanUserAddRows="False"
+                      CanUserDeleteRows="False"
+                      CanUserReorderColumns="False"
+                      CanUserResizeColumns="True"
+                      CanUserResizeRows="False"
+                      CanUserSortColumns="False"
+                      DataContext="{Binding Rows}"
+                      DataContextChanged="DataGrid_DataContextChanged"
+                      FrozenColumnCount="1"
+                      HorizontalGridLinesBrush="DarkGray"
+                      IsReadOnly="True"
+                      ItemsSource="{Binding}"
+                      SelectedCellsChanged="DataGrid_SelectedCellsChanged"
+                      SelectionMode="Single"
+                      SelectionUnit="Cell"
+                      VerticalGridLinesBrush="DarkGray">
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <Setter Property="VerticalContentAlignment" Value="Center" />
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+                <DataGrid.RowStyle>
+                    <Style TargetType="{x:Type DataGridRow}">
+                        <Setter Property="Background" Value="{Binding Path=., Converter={StaticResource DTRowBackgroundConverter}}" />
+                    </Style>
+                </DataGrid.RowStyle>
+                <DataGrid.CellStyle>
+                    <Style TargetType="{x:Type DataGridCell}">
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="Foreground" Value="Black" />
+                    </Style>
+                </DataGrid.CellStyle>
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Margin="5,0,0,0"
+                                        Width="150"
+                                        VerticalAlignment="Center"
+                                        Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.DecisionTableViewShowDecisionTableCommand}"
+                                        CommandParameter="{Binding Header}">
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <TextBlock Text="{Binding Header.Name}" x:Name="HeaderName" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                            <ControlTemplate.Triggers>
+                                                <DataTrigger Binding="{Binding Header.HasReferenceSubTable}" Value="True">
+                                                    <Setter TargetName="HeaderName" Property="TextDecorations" Value="Underline"/>
+                                                    <Setter Property="FontWeight" Value="Medium"/>
+                                                    <Setter Property="ToolTip" Value="Go to sub decision table" TargetName="HeaderName"/>
+                                                    <Setter Property="Cursor" Value="Hand" TargetName="HeaderName"/>
+                                                </DataTrigger>
+                                                <MultiDataTrigger>
+                                                    <MultiDataTrigger.Conditions>
+                                                        <Condition Binding="{Binding Header.HasReferenceSubTable}" Value="True"/>
+                                                        <Condition Binding="{Binding IsMouseOver, ElementName=HeaderName}" Value="True"/>
+                                                    </MultiDataTrigger.Conditions>
+                                                    <Setter Property="FontWeight" Value="Bold"/>
+                                                </MultiDataTrigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                                <!--<TextBlock MinWidth="150"
+                                           Margin="5,0,0,0"
+                                           VerticalAlignment="Center"
+                                           Text="{Binding Header.Name}" />-->
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" Margin="0,0,50,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0"
+                           Grid.Column="0"
+                           Margin="3,3,5,3"
+                           FontWeight="DemiBold"
+                           Foreground="Gray"
+                           Text="Edit" />
+
+                <Button Grid.Row="0"
+                        Grid.Column="1"
+                        Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.DecisionTableViewResetDecisionTableCommand}"
+                        CommandParameter="{Binding}"
+                        Content="Reset Table" />
+                <Button Grid.Row="1"
+                        Grid.Column="1"
+                        Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.DecisionTableViewAddRuleCommand}"
+                        CommandParameter="{Binding}"
+                        Content="Add Rule" />
+                <Button Grid.Row="2"
+                        Grid.Column="1"
+                        Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.DecisionTableViewSimplifyDecisionTableCommand}"
+                        CommandParameter="{Binding}"
+                        Content="Simplify" />
+
+                <Button Grid.Row="0"
+                        Grid.Column="2"
+                        Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.DecisionTableViewAddMissingRulesCommand}"
+                        CommandParameter="{Binding}"
+                        Content="Add Missing Rules" />
+                <Button Grid.Row="1"
+                        Grid.Column="2"
+                        Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.DecisionTableViewRemoveRuleCommand}"
+                        CommandParameter="{Binding}"
+                        Content="Remove Rule" />
+                <Button Grid.Row="2"
+                        Grid.Column="2"
+                        Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.DecisionTableViewExtendDecisionTableCommand}"
+                        CommandParameter="{Binding}"
+                        Content="Extend" />
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0"
+                           Grid.Column="0"
+                           Margin="3,3,5,3"
+                           FontWeight="DemiBold"
+                           Foreground="Gray"
+                           Text="Analyze" />
+                <Button Grid.Row="0"
+                        Grid.Column="1"
+                        Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.DecisionTableViewCheckForRedundancyCommand}"
+                        CommandParameter="{Binding}"
+                        Content="Check For Redundancy" />
+                <Button Grid.Row="1"
+                        Grid.Column="1"
+                        Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.DecisionTableViewCheckForCompletenessCommand}"
+                        CommandParameter="{Binding}"
+                        Content="Check For Completeness" />
+                <Button Grid.Row="2"
+                        Grid.Column="1"
+                        Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.DecisionTableViewCheckForContradictionCommand}"
+                        CommandParameter="{Binding}"
+                        Content="Check For Contradiction" />
+            </Grid>
+        </Grid>
+
+    </Grid>
+</DockingLibrary:View>

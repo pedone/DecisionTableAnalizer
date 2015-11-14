@@ -1,0 +1,24 @@
+﻿<DockingLibrary:View x:Class="DTXaml.Views.StatusView"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:DockingLibrary="clr-namespace:DockingLibrary;assembly=DockingLibrary"
+                     xmlns:uicore="clr-namespace:UICore;assembly=UICore"
+                     xmlns:dtcore="clr-namespace:DTCore;assembly=DTCore"
+                     Header="Status">
+    
+    <ItemsControl ItemsSource="{Binding Messages}" Margin="3" Background="Transparent">
+        <ItemsControl.ContextMenu>
+            <ContextMenu>
+                <MenuItem Header="Clear all"
+                          Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.StatusViewClearStatusCommand}"
+                          CommandParameter="{Binding}"/>
+            </ContextMenu>
+        </ItemsControl.ContextMenu>
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <TextBlock Text="{Binding}"/>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+    
+</DockingLibrary:View>

@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BCCC922F-2593-4484-8636-9703D97692AB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DockingLibrary</RootNamespace>
+    <AssemblyName>DockingLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20525.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoHideChannel.cs" />
+    <Compile Include="AutoHideChannelItem.cs" />
+    <Compile Include="Converter\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converter\MaxAutoHideChannelWindowSizeConverter.cs" />
+    <Compile Include="DockDirection.cs" />
+    <Compile Include="DockingBase.cs" />
+    <Compile Include="DockingBrushes.cs" />
+    <Compile Include="Commands\DockingAutoHideCommand.cs" />
+    <Compile Include="Commands\DockingCloseCommand.cs" />
+    <Compile Include="Commands\ShowHiddenDocumentViewCommand.cs" />
+    <Compile Include="Commands\ShowOpenDocumentViewListCommand.cs" />
+    <Compile Include="Converter\BackgroundTileHeightConverter.cs" />
+    <Compile Include="Converter\BackgroundTileWidthConverter.cs" />
+    <Compile Include="Converter\ViewToOpenViewDocumentCollectionConverter.cs" />
+    <Compile Include="DockingContentControl.cs" />
+    <Compile Include="DockingItemsControl.cs" />
+    <Compile Include="DockingRoute.cs" />
+    <Compile Include="DockTargetAdornerBehavior.cs" />
+    <Compile Include="DockingCommands.cs" />
+    <Compile Include="DockState.cs" />
+    <Compile Include="DockTarget.cs" />
+    <Compile Include="DockTargetAdorner.cs" />
+    <Compile Include="DockTargetVisualizerSmall.xaml.cs">
+      <DependentUpon>DockTargetVisualizerSmall.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentGroupPanel.cs" />
+    <Compile Include="DockingGroupTabControl.cs" />
+    <Compile Include="DockingGroupTabItem.cs" />
+    <Compile Include="DocumentViewTabItemModel.cs" />
+    <Compile Include="EventHandler.cs" />
+    <Compile Include="ExtendedDockDirection.cs" />
+    <Compile Include="FloatingWindow.cs" />
+    <Compile Include="IDockingContentElement.cs" />
+    <Compile Include="IDockingElement.cs" />
+    <Compile Include="ISelectingDockingContainer.cs" />
+    <Compile Include="PinButton.cs" />
+    <Compile Include="PinButtonMode.cs" />
+    <Compile Include="FunctionalEventHandler.cs" />
+    <Compile Include="TabReorderAndFlyoutManager.cs" />
+    <Compile Include="TabGroupPanel.cs" />
+    <Compile Include="View.cs" />
+    <Compile Include="TabGroup.cs" />
+    <Compile Include="DocumentGroupContainer.cs" />
+    <Compile Include="DocumentGroup.cs" />
+    <Compile Include="DockGroup.cs" />
+    <Compile Include="DockingContentBase.cs" />
+    <Compile Include="DockManager.cs" />
+    <Compile Include="ViewGroup.cs" />
+    <Compile Include="ViewUsageAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\DockingLabrary Project Management.xlsx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="DockTargetVisualizerSmall.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\AutoHideChannel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\BrushCombos\Combo108Brushes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\DockGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\DockManager.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\DockTarget.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\DocumentGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\DocumentGroupContainer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\MenuItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\PinButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\TabGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\View.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PinAutoHide.png" />
+    <Resource Include="Images\PinClose.png" />
+    <Resource Include="Images\PinMaximize.png" />
+    <Resource Include="Images\PinMenu.png" />
+    <Resource Include="Images\PinRestore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\dockTargetBig.png" />
+    <Resource Include="Images\dockTargetSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\VS2010BackgroundTile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PinMenuDocuments.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PinMenuDocumentOverflow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\FunctionalTree\FunctionalTreeLibrary\FunctionalTreeLibrary.csproj">
+      <Project>{528B7380-B2B8-4966-A28E-FA863FA76B6B}</Project>
+      <Name>FunctionalTreeLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HelperLibrary\HelperLibrary.csproj">
+      <Project>{77EE801E-5CD0-4800-89B2-21E3C723210D}</Project>
+      <Name>HelperLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

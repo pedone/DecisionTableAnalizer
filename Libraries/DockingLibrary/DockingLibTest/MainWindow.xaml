@@ -1,0 +1,42 @@
+﻿<Window x:Class="DockingLibTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:DockingLibTest"
+        xmlns:dockingLib="clr-namespace:DockingLibrary;assembly=DockingLibrary"
+        Title="MainWindow" Height="600" Width="912">
+    <Grid>
+        <dockingLib:DockManager>
+            <dockingLib:DockGroup Orientation="Vertical">
+                <!--<dockingLib:TabGroup>
+                    <dockingLib:View Header="Toolbox"/>
+                    <dockingLib:View Header="Server Explorer"/>
+                </dockingLib:TabGroup>-->
+                
+                <!--<dockingLib:DockGroup Orientation="Horizontal">-->
+                    <dockingLib:DockGroup Orientation="Horizontal">
+                        <dockingLib:DocumentGroupContainer>
+                            <dockingLib:DocumentGroup>
+                            <dockingLib:View Header="Start Page"/>
+                        </dockingLib:DocumentGroup>
+                        </dockingLib:DocumentGroupContainer>
+
+                    <!--<dockingLib:View Header="Class View" Name="foo" AutoHideDock="Right"
+                                     VerticalContentAlignment="Top" HorizontalContentAlignment="Right" Padding="0">
+                        <Button>Test</Button>
+                    </dockingLib:View>-->
+                    <local:SolutionExplorerView/>
+                </dockingLib:DockGroup>
+                    <dockingLib:DockGroup Orientation="Horizontal" AutoHideDock="Bottom">
+                        <dockingLib:TabGroup>
+                            <dockingLib:View Header="Output"/>
+                            <dockingLib:View Header="Error List"/>
+                            <dockingLib:View Header="Find Results 1"/>
+                        </dockingLib:TabGroup>
+
+                    <dockingLib:View Header="Properties" Width="300" AutoHideDock="Right"/>
+                </dockingLib:DockGroup>
+                <!--</dockingLib:DockGroup>-->
+            </dockingLib:DockGroup>
+        </dockingLib:DockManager>
+    </Grid>
+</Window>

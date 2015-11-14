@@ -1,0 +1,148 @@
+﻿<Window x:Class="DTXaml.Dialogs.PrintDecisionTablesDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dtcore="clr-namespace:DTCore;assembly=DTCore"
+        xmlns:local="clr-namespace:DTXaml"
+        x:Name="PrintDecisionTableDialogElement"
+        Title="Print Decision Tables"
+        Width="600"
+        Height="480"
+        MinWidth="300"
+        MinHeight="300"
+        Icon="pack://application:,,,/DTXaml;component/Content/Images/table.png"
+        ResizeMode="CanResize"
+        WindowStartupLocation="CenterOwner">
+    <Window.Resources>
+        <!--  Default TreeViewItem Style  -->
+        <Style TargetType="{x:Type TreeViewItem}">
+            <EventSetter Event="PreviewMouseDown" Handler="TreeViewItem_PreviewMouseDown" />
+        </Style>
+
+        <Style TargetType="{x:Type CheckBox}">
+            <Setter Property="Command" Value="{dtcore:ViewModelCommand FullName=ViewModels.Commands.PrintRequirementsDialogCheckUncheckElement}" />
+            <Setter Property="CommandParameter" Value="{Binding DataContext, ElementName=PrintDecisionTableDialogElement}" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+
+        <!--  TreeViewItem Templates  -->
+
+        <DataTemplate x:Key="DTElementItemTemplate">
+            <StackPanel Orientation="Horizontal">
+                <CheckBox IsChecked="{Binding IsSelected}" />
+                <TextBlock Margin="3,0,0,0"
+                           VerticalAlignment="Center"
+                           Text="{Binding Name}" />
+                <TextBlock Margin="10,0,0,0"
+                           Foreground="Gray"
+                           Text="{Binding Kind,
+                                          StringFormat='&lt;{0}&gt;'}" />
+            </StackPanel>
+        </DataTemplate>
+
+        <local:ElementAndSubTableTemplateSelector x:Key="ElementAndSubTableTemplateSelector"
+                                                  AreSubTablesSelectable="True"
+                                                  ConditionActionDataTemplate="{StaticResource DTElementItemTemplate}" />
+
+        <HierarchicalDataTemplate x:Key="DecisionTableItemTemplate"
+                                  ItemsSource="{Binding ConditionsActionsSubTables}"
+                                  ItemTemplateSelector="{StaticResource ElementAndSubTableTemplateSelector}">
+            <StackPanel Orientation="Horizontal">
+                <CheckBox IsChecked="{Binding IsSelected}" />
+                <TextBlock Margin="3,0,0,0"
+                           VerticalAlignment="Center"
+                           Text="{Binding Name}" />
+            </StackPanel>
+        </HierarchicalDataTemplate>
+
+    </Window.Resources>
+
+    <Grid Margin="3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TreeView>
+            <TreeViewItem IsExpanded="True"
+                          ItemsSource="{Binding DecisionTables}"
+                          ItemTemplate="{StaticResource DecisionTableItemTemplate}">
+                <TreeViewItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox IsChecked="{Binding IsSelected}" />
+                        <TextBlock Margin="3,0,0,0"
+                                   VerticalAlignment="Center"
+                                   Text="{Binding DecisionTables.Count,
+                                                  StringFormat='{}Decision Tables ({0})',
+                                                  FallbackValue='Decision Tables'}" />
+                    </StackPanel>
+                </TreeViewItem.Header>
+            </TreeViewItem>
+        </TreeView>
+
+        <GridSplitter Grid.Column="1"
+                      Width="3"
+                      ResizeBehavior="PreviousAndCurrent"
+                      ResizeDirection="Columns"
+                      ShowsPreview="False" />
+
+        <!--  Selected Element Details  -->
+        <GroupBox Grid.Column="2"
+                  Margin="3"
+                  Header="Details">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!--  Name  -->
+                    <TextBlock Grid.Row="0"
+                               Grid.Column="0"
+                               Style="{StaticResource TextBlockHeaderStyle}"
+                               Text="Name" />
+                    <TextBox Grid.Row="0"
+                             Grid.Column="1"
+                             IsReadOnly="True"
+                             Text="{Binding SelectedElement.Name}" />
+                </Grid>
+
+                <!--  Description  -->
+                <TabControl Grid.Row="1"
+                            Grid.Column="0"
+                            Margin="0,5">
+                    <TabItem Header="Description">
+                        <TextBox x:Name="tbDescription"
+                                 Grid.Row="1"
+                                 Margin="0"
+                                 IsReadOnly="True"
+                                 Text="{Binding SelectedElement.Description}" />
+                    </TabItem>
+                </TabControl>
+
+            </Grid>
+        </GroupBox>
+
+        <StackPanel Grid.Row="1"
+                    Grid.ColumnSpan="3"
+                    HorizontalAlignment="Right"
+                    Orientation="Horizontal">
+            <Button Click="Print_Click"
+                    Content="Print"
+                    IsDefault="True" />
+            <Button Click="Cancel_Click"
+                    Content="Cancel"
+                    IsCancel="True" />
+        </StackPanel>
+    </Grid>
+</Window>

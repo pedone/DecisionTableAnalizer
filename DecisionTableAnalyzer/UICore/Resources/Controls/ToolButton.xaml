@@ -1,0 +1,44 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:diag="clr-namespace:System.Diagnostics;assembly=WindowsBase"
+                    xmlns:local="clr-namespace:UICore"
+                    xmlns:localControls="clr-namespace:UICore.Resources.Controls">
+
+    <Style TargetType="{x:Type localControls:ToolButton}">
+        <Setter Property="Padding" Value="2" />
+        <Setter Property="Background" Value="{DynamicResource {x:Static local:UIBrushes.ToolButtonBackground}}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource {x:Static local:UIBrushes.ToolButtonBorder}}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type localControls:ToolButton}">
+                    <Grid x:Name="Grid">
+                        <Border x:Name="Border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="2"
+                                Padding="{TemplateBinding Padding}" >
+                            <Image x:Name="imgIcon"
+                                   Source="{TemplateBinding Icon}" />
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="imgIcon" Property="Source" Value="{Binding DisabledIcon, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" Value="{DynamicResource {x:Static local:UIBrushes.ToolButtonMouseOverBackground}}" />
+                            <Setter Property="BorderBrush" Value="{DynamicResource {x:Static local:UIBrushes.ToolButtonMouseOverBorder}}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="Background" Value="{DynamicResource {x:Static local:UIBrushes.ToolButtonPressedBackground}}" />
+                            <Setter Property="BorderBrush" Value="{DynamicResource {x:Static local:UIBrushes.ToolButtonPressedBackground}}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

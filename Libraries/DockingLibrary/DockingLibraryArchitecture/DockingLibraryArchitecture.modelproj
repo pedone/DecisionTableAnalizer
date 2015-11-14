@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4f6dc6f1-d8c7-4da5-a29b-1ecbc3018b5c}</ProjectGuid>
+    <ArchitectureToolsVersion>1.0.0.0</ArchitectureToolsVersion>
+    <Name>DockingLibraryArchitecture</Name>
+    <RootNamespace>DockingLibraryArchitecture</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" />
+  <ItemGroup>
+    <Content Include="1\Architecture.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="1\Architecture.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>1\Architecture.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="1\AutoHideChannel.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="1\AutoHideChannel.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>1\AutoHideChannel.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="1\DockGroup.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="1\DockGroup.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>1\DockGroup.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="1\DockingContent.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="1\DockingContent.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>1\DockingContent.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="1\DockManager.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="1\DockManager.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>1\DockManager.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="1\DocumentGroup.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="1\DocumentGroup.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>1\DocumentGroup.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="1\IDockingContainer.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="1\IDockingContainer.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>1\IDockingContainer.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="1\TabGroup.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="1\TabGroup.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>1\TabGroup.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="1\View.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="1\View.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>1\View.classdiagram</DependentUpon>
+    </Content>
+    <Folder Include="ModelDefinition\" />
+    <Content Include="2\ItemsGroup.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="2\ItemsGroup.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>2\ItemsGroup.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="2\View Architecture.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="2\View Architecture.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>2\View Architecture.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="2\ViewContainer.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="2\ViewContainer.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>2\ViewContainer.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="3\Abstract Inheritance Architecture.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="3\Abstract Inheritance Architecture.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>3\Abstract Inheritance Architecture.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="3\Crucial Elements.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="3\Crucial Elements.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>3\Crucial Elements.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="3\Implementation.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="3\Implementation.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>3\Implementation.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="ModelDefinition\DockingLibraryArchitecture.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Folder Include="1" />
+    <Folder Include="2" />
+    <Folder Include="3" />
+  </ItemGroup>
+</Project>

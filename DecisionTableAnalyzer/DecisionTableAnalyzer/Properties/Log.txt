@@ -1,0 +1,28 @@
+DecisionTableAnalyzer
+
+19.7.11
+1h Architektur
+1h Gui
+2h Programmieren
+
+20.7.11
+  - Frage: wie wird das mit den ViewModels gemacht? View aus zentraler Datenbank?
+ - Antwort: keine Entities - ViewModels, sondern nur ViewModels. Wenn man beides haette, dann wuerden zunaechst Entities geladen.
+	Wenn ViewModel benoetigt wird, dann wird es aus Entity gefuellt. Wenn ViewModel committed, dann werden Daten zurueck an Entity
+	geschickt. Alle ViewModels, muessten automatisch geupdated werden wenn sich Entity aendert. Deshalb werden nur ViewModels verwendet,
+	wenn sich an den ViewModels etwas aendert, muss nichts weiter geupdatet werden, da alle Oberflaechen auf den gleichen Daten operieren.
+
+1h Architektur
+3h Programmieren
+
+20.7.11
+5h
+
+21.7.11
+3h
+
+23.7.11
+5h
+
+24.7.11
+5h

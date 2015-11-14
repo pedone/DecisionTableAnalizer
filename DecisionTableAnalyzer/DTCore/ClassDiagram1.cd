@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DTCore.DelegateCommand" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAQAAEQAAAAAAAAAAAAAAAAAAAAAAEg=</HashCode>
+      <FileName>DelegateCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DTCore.DTService">
+    <Position X="2.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DTService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DTCore.Entity" Collapsed="true">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAIAKAAkAAIAEAAoAhAAGAoAAAAhACBCAAAAA=</HashCode>
+      <FileName>Entity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DTCore.EntityId" Collapsed="true">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAgAAAAAAAQAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>EntityId.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DTCore.EntityList&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEIAAEgAAICAAAAQCAAAFAQgAgAAAAAECAAAAABQIQA=</HashCode>
+      <FileName>EntityList.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DTCore.EntityNotFoundException" Collapsed="true">
+    <Position X="6" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EntityNotFoundException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DTCore.EntityService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAACECABAAAAQAIAAABAgAgAAEAgBQASAMAAABCAgA=</HashCode>
+      <FileName>EntityService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DTCore.EntityTypeAttribute" Collapsed="true">
+    <Position X="9.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EntityTypeAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DTCore.HistoryService">
+    <Position X="11" Y="5.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAABgAFAAAhCAAAAAAAAABAAAAAAAAQAAAAAEAAQA=</HashCode>
+      <FileName>HistoryService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DTCore.HistoryEntry">
+    <Position X="5.5" Y="6" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAACAAAAAAQAAAACAAEAAAAAAAAAAAACAAEAQ=</HashCode>
+      <FileName>HistorySession.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DTCore.HistorySession">
+    <Position X="2.75" Y="6" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAgEAAAAAAAACEAAAAAAAAAAAAAAAAAAAAAIACAAAA=</HashCode>
+      <FileName>HistorySession.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DTCore.StatusReporter" Collapsed="true">
+    <Position X="7.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAIAAAAA=</HashCode>
+      <FileName>StatusReporter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DTCore.TypeMapping" Collapsed="true">
+    <Position X="9.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>TypeMapping.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DTCore.ViewData" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAIAAAAAABAAQEAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>ViewData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DTCore.ViewData&lt;EntityType&gt;" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAQAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>ViewData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DTCore.ViewDataTypeAttribute" Collapsed="true">
+    <Position X="11.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewDataTypeAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DTCore.ViewModel" Collapsed="true">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgBAAAKAEYAACAgAAAAAgBBAAIAAAAECBBCAAAA=</HashCode>
+      <FileName>ViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DTCore.ViewModel&lt;ViewDataType&gt;" Collapsed="true">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAABAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DTCore.ViewModelCommand" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModelCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DTCore.ViewModelCommand&lt;T&gt;" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModelCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DTCore.ViewModelCommandExtension" Collapsed="true">
+    <Position X="13" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModelCommandExtension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="DTCore.HistoryAction">
+    <Position X="8.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAEAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>HistorySession.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

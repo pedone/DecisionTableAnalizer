@@ -1,0 +1,191 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:PresentationOptions="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+                    xmlns:local="clr-namespace:DockingLibrary">
+
+    <!-- http://www.colorcombos.com/color-scheme-108.html -->
+
+    <!-- DockManager -->
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DockManagerBackground}" Color="#031634"/>
+
+    <!-- View -->
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.ViewBackground}" Color="#C4CCCF"/>
+
+    <!-- Menu -->
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.MenuPopupBorder}" Color="#7CA1AF"/>
+    <LinearGradientBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.MenuPopupBackground}" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#B6D7E3" Offset="0"/>
+        <GradientStop Color="#A1D1E3" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.MenuPopupIconColumnBackground}" Color="#B6D7E3"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.MenuItemBackground}" Color="Transparent"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.MenuItemBorder}" Color="Transparent"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.MenuItemForeground}" Color="Black"/>
+    <LinearGradientBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.MenuItemMouseOverBackground}" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#B4CFF09E" Offset="0"/>
+        <GradientStop Color="#B4B9D78E" Offset="0.6"/>
+        <GradientStop Color="#B4A8C481" Offset="0.6"/>
+    </LinearGradientBrush>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.MenuItemMouseOverBorder}" Color="#B4849965"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.MenuItemMouseOverForeground}" Color="Black"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.MenuItemPressedBackground}" Color="#A1D1E3"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.MenuItemPressedBorder}" Color="#7CA1AF"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.MenuItemPressedForeground}" Color="Black"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.MenuItemSubmenuOpenBackground}" Color="#B6D7E3"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.MenuItemSubmenuOpenBorder}" Color="#7CA1AF"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.MenuItemSubmenuOpenForeground}" Color="Black"/>
+
+    <!-- PinButton -->
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.PinButtonBackground}" Color="Transparent"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.PinButtonForeground}" Color="#93BFCF"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.PinButtonBorder}" Color="Transparent"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.PinButtonActiveBackground}" Color="Transparent"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.PinButtonActiveForeground}" Color="#93BFCF"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.PinButtonActiveBorder}" Color="Transparent"/>
+
+    <LinearGradientBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.PinButtonMouseOverBackground}" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#CFF09E" Offset="0"/>
+        <GradientStop Color="#B9D78E" Offset="0.6"/>
+        <GradientStop Color="#A8C481" Offset="0.6"/>
+    </LinearGradientBrush>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.PinButtonMouseOverForeground}" Color="Black"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.PinButtonMouseOverBorder}" Color="#7B8F5E"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.PinButtonPressedBackground}" Color="#A8C481"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.PinButtonPressedForeground}" Color="Black"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.PinButtonPressedBorder}" Color="#7B8F5E"/>
+
+    <!-- DocumentPinButton -->
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentPinButtonBackground}" Color="Transparent"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentPinButtonForeground}" Color="#4A6169"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentPinButtonBorder}" Color="Transparent"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentPinButtonMouseOverBackground}" Color="#CFF09E"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentPinButtonMouseOverForeground}" Color="Black"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentPinButtonMouseOverBorder}" Color="#9EB879"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentPinButtonSelectedBackground}" Color="Transparent"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentPinButtonSelectedForeground}" Color="#678692"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentPinButtonSelectedBorder}" Color="Transparent"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentPinButtonPressedBackground}" Color="#7B8F5E"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentPinButtonPressedForeground}" Color="Black"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentPinButtonPressedBorder}" Color="#5D6C47"/>
+    <!-- Active -->
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentPinButtonActiveBackground}" Color="Transparent"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentPinButtonActiveForeground}" Color="#75633D"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentPinButtonActiveBorder}" Color="Transparent"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentPinButtonMouseOverActiveBackground}" Color="#FFF3CF"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentPinButtonMouseOverActiveForeground}" Color="Black"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentPinButtonMouseOverActiveBorder}" Color="#E0B635"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentPinButtonPressedActiveBackground}" Color="#FFD247"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentPinButtonPressedActiveForeground}" Color="Black"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentPinButtonPressedActiveBorder}" Color="#E0B635"/>
+
+    <!-- DocumentGroupContainer -->
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentGroupContainerBackground}" Color="Transparent"/>
+
+    <!-- DockGroupSplitter -->
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DockGroupSplitterBackground}" Color="Transparent"/>
+
+    <!-- DocumentGroup -->
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentGroupBackground}" Color="#044E69"/>
+
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentGroupContentBorder}" Color="#A8C481"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentGroupContentOuterBorderLine}" Color="#CFF09E"/>
+
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentGroupContentActiveBorder}" Color="#FFDA6A"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentGroupContentActiveOuterBorderLine}" Color="#FFF6DA"/>
+
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentGroupTabItemBackground}" Color="#64CFF09E"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentGroupTabItemBorder}" Color="#64CFF09E"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentGroupTabItemForeground}" Color="White"/>
+
+    <LinearGradientBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentGroupTabItemMouseOverBackground}" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#B4CFF09E" Offset="0"/>
+        <GradientStop Color="#B4B9D78E" Offset="0.6"/>
+        <GradientStop Color="#B4A8C481" Offset="0.6"/>
+    </LinearGradientBrush>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentGroupTabItemMouseOverBorder}" Color="#A8C481"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentGroupTabItemMouseOverForeground}" Color="White"/>
+
+    <LinearGradientBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentGroupTabItemSelectedBorder}" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#CFF09E" Offset="0"/>
+        <GradientStop Color="#B9D78E" Offset="0.6"/>
+        <GradientStop Color="#A8C481" Offset="0.6"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentGroupTabItemSelectedBackground}" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#CFF09E" Offset="0"/>
+        <GradientStop Color="#B9D78E" Offset="0.6"/>
+        <GradientStop Color="#A8C481" Offset="0.6"/>
+    </LinearGradientBrush>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentGroupTabItemSelectedForeground}" Color="Black"/>
+
+    <LinearGradientBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentGroupTabItemActiveBorder}" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFECAA" Offset="0"/>
+        <GradientStop Color="#FFE28B" Offset="0.6"/>
+        <GradientStop Color="#FFDA6A" Offset="0.6"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentGroupTabItemActiveBackground}" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFECAA" Offset="0"/>
+        <GradientStop Color="#FFE28B" Offset="0.6"/>
+        <GradientStop Color="#FFDA6A" Offset="0.6"/>
+    </LinearGradientBrush>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.DocumentGroupTabItemActiveForeground}" Color="Black"/>
+
+    <!-- TabGroup -->
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.TabGroupBackground}" Color="#036564"/>
+
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.TabGroupContentBorder}" Color="#A8C481"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.TabGroupContentOuterBorderLine}" Color="#CFF09E"/>
+
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.TabGroupContentActiveBorder}" Color="#FFDA6A"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.TabGroupContentActiveOuterBorderLine}" Color="#FFF6DA"/>
+
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.TabGroupTabItemBackground}" Color="#64CFF09E"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.TabGroupTabItemBorder}" Color="#64CFF09E"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.TabGroupTabItemForeground}" Color="White"/>
+
+    <LinearGradientBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.TabGroupTabItemMouseOverBorder}" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#B4CFF09E" Offset="0"/>
+        <GradientStop Color="#B4B9D78E" Offset="0.6"/>
+        <GradientStop Color="#B4A8C481" Offset="0.6"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.TabGroupTabItemMouseOverBackground}" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#B4CFF09E" Offset="0"/>
+        <GradientStop Color="#B4B9D78E" Offset="0.6"/>
+        <GradientStop Color="#B4A8C481" Offset="0.6"/>
+    </LinearGradientBrush>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.TabGroupTabItemMouseOverForeground}" Color="White"/>
+
+    <LinearGradientBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.TabGroupTabItemSelectedBorder}" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#CFF09E" Offset="0"/>
+        <GradientStop Color="#B9D78E" Offset="0.6"/>
+        <GradientStop Color="#A8C481" Offset="0.6"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.TabGroupTabItemSelectedBackground}" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#CFF09E" Offset="0"/>
+        <GradientStop Color="#B9D78E" Offset="0.6"/>
+        <GradientStop Color="#A8C481" Offset="0.6"/>
+    </LinearGradientBrush>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.TabGroupTabItemSelectedForeground}" Color="Black"/>
+
+    <LinearGradientBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.TabGroupTabItemActiveBackground}" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFECAA" Offset="0"/>
+        <GradientStop Color="#FFE28B" Offset="0.6"/>
+        <GradientStop Color="#FFDA6A" Offset="0.6"/>
+    </LinearGradientBrush>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.TabGroupTabItemActiveBorder}" Color="#FFDA6A"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.TabGroupTabItemActiveForeground}" Color="Black"/>
+
+    <!-- AutoHideChannel-->
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.AutoHideChannelBackground}" Color="Transparent"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.AutoHideChannelBorder}" Color="Transparent"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.AutoHideChannelForeground}" Color="Transparent"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.AutoHideChannelTabItemBackground}" Color="Transparent"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.AutoHideChannelTabItemBorder}" Color="Transparent"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.AutoHideChannelTabItemForeground}" Color="Transparent"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.AutoHideChannelTabItemMouseOverBackground}" Color="Transparent"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.AutoHideChannelTabItemMouseOverBorder}" Color="Transparent"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.AutoHideChannelTabItemMouseOverForeground}" Color="Transparent"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.AutoHideChannelTabItemSelectedBackground}" Color="Transparent"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.AutoHideChannelTabItemSelectedBorder}" Color="Transparent"/>
+    <SolidColorBrush PresentationOptions:Freeze="True" x:Key="{x:Static local:DockingBrushes.AutoHideChannelTabItemSelectedForeground}" Color="Transparent"/>
+
+</ResourceDictionary>

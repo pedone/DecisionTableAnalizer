@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="b9327c74-a5a5-45e4-a8a9-789507bc2054" name="Architecture" linkedPackageId="13d0a477-93a4-4540-b4a0-8bb36a00ff43" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c75dd53c-7c50-494e-b13f-8515c467a36e" name="DockingBase" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="625df961-62b4-4aa6-8391-8c09551f741b" />
+        <suppliersInternal>
+          <interfaceRealization Id="eb2eda05-d41f-4443-8ca1-2c4e63a64a83">
+            <interfaceMoniker Id="c10dc9d8-30f5-4853-bf20-26ecc8ee251a" LastKnownName="IDockingElement" />
+            <elementDefinition Id="38560a91-4766-4636-b854-37b90be29379" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b7e6d694-c770-4ec8-8151-d65ee60f72cd" name="TabGroup" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a81aa013-564e-44df-a485-706445934c0e" />
+        <generalsInternal>
+          <generalization Id="b9f7bc03-dbfb-4be6-9fed-2182380a23df" isSubstitutable="false">
+            <classMoniker Id="c75dd53c-7c50-494e-b13f-8515c467a36e" LastKnownName="DockingBase" />
+            <elementDefinition Id="b4beb3dc-ba6a-43c1-9706-e589846bf433" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ff8603ee-9fd3-4ac4-ba43-2669758a8de1" name="AutoHideChannel" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="10b30f6f-cd8a-41c0-b6ba-b9180a684901" />
+        <generalsInternal>
+          <generalization Id="6aef3029-a7ee-4b03-ae91-d5b30b060aa3" isSubstitutable="false">
+            <classMoniker Id="c75dd53c-7c50-494e-b13f-8515c467a36e" LastKnownName="DockingBase" />
+            <elementDefinition Id="4e41ebb7-dffe-4a22-acd6-102afab0a615" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="6051f2e1-a473-4dc0-81e3-4c2c5e127668" name="DockManager" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e6d82f4e-6e0c-446f-b23e-14ec72a8d5c0" />
+        <generalsInternal>
+          <generalization Id="80a6d430-802d-400f-8ce0-22e07cc30e10" isSubstitutable="false">
+            <classMoniker Id="c75dd53c-7c50-494e-b13f-8515c467a36e" LastKnownName="DockingBase" />
+            <elementDefinition Id="234f8c22-0735-4bfb-98cf-2ceb105afc78" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="28cd379f-cc2a-4315-ab78-ea0610ec3c59" name="View" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d64086f0-fbb0-4f8c-a754-b38c30f4aa34" />
+        <generalsInternal>
+          <generalization Id="a3318752-4eb2-4380-a86b-2a075ea6b98d" isSubstitutable="false">
+            <classMoniker Id="c75dd53c-7c50-494e-b13f-8515c467a36e" LastKnownName="DockingBase" />
+            <elementDefinition Id="383866b4-308f-4463-9c67-f77af932e1c5" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a14c29d9-2065-4005-855a-2aaedc5bd7c3" name="DocumentGroupContainer" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ed1fd72a-7482-4c32-93e4-b1db10c5d23d" />
+        <generalsInternal>
+          <generalization Id="22b7bd28-fbfe-46d2-9e1d-7b98cd2d6e15" isSubstitutable="false">
+            <classMoniker Id="c75dd53c-7c50-494e-b13f-8515c467a36e" LastKnownName="DockingBase" />
+            <elementDefinition Id="d1dc41b0-dfee-4fae-891a-57391e5b07fa" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="23883952-86bb-4a27-bf6c-e5c8ae7c072a" name="DocumentGroup" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6b1db336-2cc7-464c-a2f2-10394cf9be1e" />
+        <generalsInternal>
+          <generalization Id="6ee6690c-5100-4f3e-aa05-72f82661a4fd" isSubstitutable="false">
+            <classMoniker Id="b7e6d694-c770-4ec8-8151-d65ee60f72cd" LastKnownName="TabGroup" />
+            <elementDefinition Id="b4c57a8b-4108-4acd-9b21-9cc9d580a0a7" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a688e3e9-00a3-4eeb-87c5-04513368c98f" name="DockingWindow" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5c2c04a9-6c22-4a9f-b86f-8202eb57c65f" />
+        <suppliersInternal>
+          <interfaceRealization Id="3a958de6-b2db-4447-86d3-d52b72a765fb">
+            <interfaceMoniker Id="c10dc9d8-30f5-4853-bf20-26ecc8ee251a" LastKnownName="IDockingElement" />
+            <elementDefinition Id="1cf4b49b-46d8-489a-ba49-c0f5339e97bb" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e3202623-4301-4f90-b8a5-3d1a386bade5" name="DockGroup" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="62a867f1-947a-4206-9cd1-9a6b0f811fcb" />
+        <generalsInternal>
+          <generalization Id="de7ee90c-be5e-4615-ad55-fabe88bc4035" isSubstitutable="false">
+            <classMoniker Id="c75dd53c-7c50-494e-b13f-8515c467a36e" LastKnownName="DockingBase" />
+            <elementDefinition Id="f0a5cf3a-b447-487f-94f9-0568967ad847" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="c10dc9d8-30f5-4853-bf20-26ecc8ee251a" name="IDockingElement" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5cb79cff-3701-44d5-9c36-d8b37a960d82" />
+        <ownedAttributes>
+          <property Id="02eb2f73-5962-4d81-918d-3c65a1a66cb9" name="DockManager" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="bd3a01fc-b625-46cc-a07f-d4b6fef2a564" />
+          </property>
+          <property Id="7fcef81a-a762-41b1-bd19-975c4ee7c41d" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c3799789-91bb-46c7-8919-ed10f9d26a74" />
+          </property>
+          <property Id="dc38a721-b8f6-4f5c-9eda-6863f17ad919" name="ParentContent" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="cc7c4dee-5632-4085-b2f7-02ba3c337bd4" />
+          </property>
+        </ownedAttributes>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="13d0a477-93a4-4540-b4a0-8bb36a00ff43" name="DockingLibraryArchitecture">
+    <elementDefinition Id="219473a8-2a14-4fa5-954c-0aa372636908" />
+  </package>
+</logicalClassDesignerModel>

@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6C9CF88C-FBAE-437D-840C-E125446BB58C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DecisionTableAnalizerTests</RootNamespace>
+    <AssemblyName>DecisionTableAnalizerTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DecisionTableViewModelUtilsTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Shadow Include="Test References\DecisionTableAnalyzer.accessor" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\DockingLibrary\DockingLibrary\DockingLibrary.csproj">
+      <Project>{BCCC922F-2593-4484-8636-9703D97692AB}</Project>
+      <Name>DockingLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Extension Library\ExtensionLibrary.csproj">
+      <Project>{938F0AA9-6FD8-4DDC-802F-9D6900AFEE15}</Project>
+      <Name>ExtensionLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\FunctionalTree\FunctionalTreeLibrary\FunctionalTreeLibrary.csproj">
+      <Project>{528B7380-B2B8-4966-A28E-FA863FA76B6B}</Project>
+      <Name>FunctionalTreeLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\HelperLibrary\HelperLibrary.csproj">
+      <Project>{77EE801E-5CD0-4800-89B2-21E3C723210D}</Project>
+      <Name>HelperLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DecisionTableAnalyzer\DecisionTableAnalyzer.csproj">
+      <Project>{B3BF278D-B128-4EA7-AB8F-0E46DCF72A41}</Project>
+      <Name>DecisionTableAnalyzer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTCore\DTCore.csproj">
+      <Project>{EC8EA4E9-DFAA-48E4-94C9-581ABE97427B}</Project>
+      <Name>DTCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTEnums\DTEnums.csproj">
+      <Project>{799A54DD-8063-43CF-8D95-65820A46BFE5}</Project>
+      <Name>DTEnums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTServices\DTServices.csproj">
+      <Project>{D943FE98-BED9-4A7D-ACA2-1394FCAC9491}</Project>
+      <Name>DTServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UICore\UICore.csproj">
+      <Project>{7458EA97-C457-40F6-9279-FF4B52A3F300}</Project>
+      <Name>UICore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewDatas\ViewDatas.csproj">
+      <Project>{0C1BA2CB-28E7-4407-87D0-2A7F116C4EF1}</Project>
+      <Name>ViewDatas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewModels\ViewModels.csproj">
+      <Project>{EC409C82-D144-4549-855B-6FDF496A290C}</Project>
+      <Name>ViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Shadow Include="Test References\ViewModels.accessor" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

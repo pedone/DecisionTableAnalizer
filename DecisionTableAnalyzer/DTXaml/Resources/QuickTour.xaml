@@ -1,0 +1,24 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:viewModels="clr-namespace:ViewModels;assembly=ViewModels"
+                    xmlns:dialogs="clr-namespace:DTXaml.Dialogs;assembly=DTXaml"
+                    xmlns:views="clr-namespace:DTXaml.Views;assembly=DTXaml"
+                    xmlns:core="clr-namespace:DTCore;assembly=DTCore"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:String x:Key="QuickTourHeader">Welcome to DTA - Decision Table Analyzer</sys:String>
+
+    <sys:String x:Key="QuickTourText">
+        In order to give you a quick orientation to the program we put some information here showing you the fastest way to your decision table. 
+        The view you are seeing right now is the "start view". This is the place you start on DTA startup. But as many things more this behavior can be changed.
+        Click on "New Project" on the left hand side. Now enter a name, describing the project and a description. Submit your data by pressing "Ok".  
+        If you are wondering why a blank, blue area shows up - there is a reason. DTA does not know by default what you want to do after loading/creating a project. But you can change this yourself by changing the value of the dropdown box on the start view to a value different than "No View".
+        Now open the Requirements Manager by selecting the appropriate insert from the "View" menu. Now define your functional and non-functional requirements. Open the decision table manager by selecting it in the "view" menu. You can create from one up to many decision tables with different conditions and actions.
+        These must be defined in the decision table details view. You can access it by clicking on the lower middle icon.
+        Specify the conditions and actions in the common way and return to the decision table manager view. 
+        Now that you have supplied DTA with all required data you can finally generate the decision table.
+        Specify the rules you need or simply generate them. These and other handy functions are provided by the lower buttons.
+        Now that you have completed this tour you are ready to launch!
+    </sys:String>
+    
+</ResourceDictionary>

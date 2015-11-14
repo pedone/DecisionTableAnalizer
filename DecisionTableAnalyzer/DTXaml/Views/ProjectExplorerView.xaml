@@ -1,0 +1,183 @@
+﻿<DockingLibrary:View x:Class="DTXaml.Views.ProjectExplorerView"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:converters="clr-namespace:DTXaml.Converters"
+                     xmlns:DockingLibrary="clr-namespace:DockingLibrary;assembly=DockingLibrary"
+                     xmlns:dtcore="clr-namespace:DTCore;assembly=DTCore"
+                     xmlns:local="clr-namespace:DTXaml"
+                     xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+                     x:Name="ProjectExplorerControl"
+                     Header="Project Explorer">
+    <DockingLibrary:View.Resources>
+
+        <CollectionViewSource x:Key="FunctionalRequirementsViewSource" Source="{Binding RequirementManager.FunctionalRequirements}" />
+        <CollectionViewSource x:Key="NonFunctionalRequirementsViewSource" Source="{Binding RequirementManager.NonFunctionalRequirements}" />
+
+        <!--  ContextMenus  -->
+
+        <ContextMenu x:Key="ProjectContextMenu">
+            <MenuItem Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.ProjectExplorerViewEditProjectPropertiesCommand}"
+                      CommandParameter="{Binding}"
+                      Header="Properties" />
+        </ContextMenu>
+
+        <ContextMenu x:Key="RequirementManagerContextMenu" DataContext="{Binding PlacementTarget.Tag, RelativeSource={RelativeSource Self}}">
+            <MenuItem Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.ProjectExplorerViewShowRequirementManagerViewCommand}"
+                      CommandParameter="{Binding}"
+                      Header="Overview" />
+            <MenuItem Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.ProjectExplorerViewNewRequirementCommand}"
+                      CommandParameter="{Binding}"
+                      Header="New Requirement" />
+        </ContextMenu>
+
+        <ContextMenu x:Key="DecisionTableManagerContextMenu" DataContext="{Binding PlacementTarget.Tag, RelativeSource={RelativeSource Self}}">
+            <MenuItem Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.ProjectExplorerViewShowDecisionTableManagerViewCommand}"
+                      CommandParameter="{Binding}"
+                      Header="Overview" />
+            <MenuItem Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.ProjectExplorerViewNewDecisionTableCommand}"
+                      CommandParameter="{Binding}"
+                      Header="New Decision Table" />
+        </ContextMenu>
+
+        <ContextMenu x:Key="DTElementItemContextMenu" DataContext="{Binding PlacementTarget.Tag, RelativeSource={RelativeSource Self}}">
+            <MenuItem Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.ProjectExplorerViewDeleteDTElementCommand}"
+                      CommandParameter="{Binding}"
+                      Header="Delete" />
+            <MenuItem Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.ProjectExplorerViewEditDTElementPropertiesCommand}"
+                      CommandParameter="{Binding}"
+                      Header="Properties" />
+        </ContextMenu>
+
+        <ContextMenu x:Key="RequirementItemContextMenu" DataContext="{Binding PlacementTarget.Tag, RelativeSource={RelativeSource Self}}">
+            <MenuItem Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.ProjectExplorerViewDeleteRequirementCommand}"
+                      CommandParameter="{Binding}"
+                      Header="Delete" />
+            <MenuItem Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.ProjectExplorerViewEditRequirementPropertiesCommand}"
+                      CommandParameter="{Binding}"
+                      Header="Properties" />
+        </ContextMenu>
+
+        <ContextMenu x:Key="DecisionTableContextMenu" DataContext="{Binding PlacementTarget.Tag, RelativeSource={RelativeSource Self}}">
+            <MenuItem Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.ProjectExplorerViewShowDecisionTableDataCommand}"
+                      CommandParameter="{Binding}"
+                      Header="Show Data" />
+            <MenuItem Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.ProjectExplorerViewShowDecisionTableCommand}"
+                      CommandParameter="{Binding}"
+                      Header="Show Table" />
+            <MenuItem Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.ProjectExplorerViewDeleteDecisionTableCommand}"
+                      CommandParameter="{Binding}"
+                      Header="Delete" />
+            <MenuItem Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.ProjectExplorerViewEditDecisionTablePropertiesCommand}"
+                      CommandParameter="{Binding}"
+                      Header="Properties" />
+            <Separator />
+            <MenuItem Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.ProjectExplorerViewNewConditionCommand}"
+                      CommandParameter="{Binding}"
+                      Header="New Condition" />
+            <MenuItem Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.ProjectExplorerViewNewActionCommand}"
+                      CommandParameter="{Binding}"
+                      Header="New Action" />
+        </ContextMenu>
+
+        <!--  TreeViewItem Styles  -->
+
+        <!--  Default TreeViewItem Style  -->
+        <Style x:Key="DefaultTreeViewItemStyle" TargetType="{x:Type TreeViewItem}">
+            <Setter Property="Tag" Value="{Binding DataContext, RelativeSource={RelativeSource AncestorType={x:Type TreeView}}}" />
+
+            <EventSetter Event="PreviewMouseRightButtonDown" Handler="TreeViewItem_PreviewMouseRightButtonDown" />
+            <EventSetter Event="PreviewMouseDown" Handler="TreeViewItem_PreviewMouseDown" />
+        </Style>
+
+        <!--  DTElement Item Style  -->
+        <Style x:Key="DTElementItemStyle"
+               BasedOn="{StaticResource DefaultTreeViewItemStyle}"
+               TargetType="{x:Type TreeViewItem}">
+            <Setter Property="ContextMenu" Value="{StaticResource DTElementItemContextMenu}" />
+        </Style>
+
+        <!--  Requirement Item Style  -->
+        <Style x:Key="RequirementItemStyle"
+               BasedOn="{StaticResource DefaultTreeViewItemStyle}"
+               TargetType="{x:Type TreeViewItem}">
+            <Setter Property="ContextMenu" Value="{StaticResource RequirementItemContextMenu}" />
+        </Style>
+
+        <!--  DecisionTable Item Style  -->
+        <Style x:Key="DecisionTableItemStyle"
+               BasedOn="{StaticResource DefaultTreeViewItemStyle}"
+               TargetType="{x:Type TreeViewItem}">
+            <Setter Property="ContextMenu" Value="{StaticResource DecisionTableContextMenu}" />
+            <Setter Property="IsExpanded" Value="False" />
+        </Style>
+        
+        <!--  TreeViewItem Templates  -->
+
+        <DataTemplate x:Key="RequirementItemTemplate">
+            <StackPanel Background="Transparent" Orientation="Horizontal">
+                <TextBlock Text="{Binding Name}" />
+                <TextBlock Margin="10,0,0,0"
+                           Foreground="Gray"
+                           Text="{Binding Kind,
+                                          StringFormat='&lt;{0}&gt;'}" />
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate x:Key="DTElementItemTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Name}" />
+                <TextBlock Margin="10,0,0,0"
+                           Foreground="Gray"
+                           Text="{Binding Kind,
+                                          StringFormat='&lt;{0}&gt;'}" />
+            </StackPanel>
+        </DataTemplate>
+
+        <local:ElementAndSubTableTemplateSelector x:Key="ElementAndSubTableTemplateSelector"
+                                                  ConditionActionDataTemplate="{StaticResource DTElementItemTemplate}"
+                                                  DTElementItemStyle="{StaticResource DTElementItemStyle}"
+                                                  DecisionTableItemStyle="{StaticResource DecisionTableItemStyle}"/>
+
+        <HierarchicalDataTemplate x:Key="DecisionTableItemTemplate"
+                                  ItemContainerStyle="{StaticResource DTElementItemStyle}"
+                                  ItemsSource="{Binding ConditionsActionsSubTables}"
+                                  ItemTemplateSelector="{StaticResource ElementAndSubTableTemplateSelector}">
+            <TextBlock Text="{Binding Name}" />
+        </HierarchicalDataTemplate>
+
+    </DockingLibrary:View.Resources>
+    <Grid>
+        <TreeView>
+            <TreeViewItem ContextMenu="{StaticResource ProjectContextMenu}" IsExpanded="True">
+                <TreeViewItem.Header>
+                    <TextBlock Text="{Binding Project.Name, StringFormat='{}Project - {0}', FallbackValue='No Project loaded'}" />
+                </TreeViewItem.Header>
+                <TreeViewItem ContextMenu="{StaticResource RequirementManagerContextMenu}"
+                              DataContext="{Binding RequirementManager}"
+                              ItemContainerStyle="{StaticResource RequirementItemStyle}"
+                              ItemTemplate="{StaticResource RequirementItemTemplate}"
+                              Style="{StaticResource DefaultTreeViewItemStyle}">
+                    <TreeViewItem.ItemsSource>
+                        <CompositeCollection>
+                            <CollectionContainer Collection="{Binding Source={StaticResource FunctionalRequirementsViewSource}}" />
+                            <CollectionContainer Collection="{Binding Source={StaticResource NonFunctionalRequirementsViewSource}}" />
+                        </CompositeCollection>
+                    </TreeViewItem.ItemsSource>
+                    <TreeViewItem.Header>
+                        <TextBlock Text="{Binding RequirementCount, StringFormat='{}Requirements ({0})', FallbackValue='Requirements'}" />
+                    </TreeViewItem.Header>
+                </TreeViewItem>
+                <TreeViewItem ContextMenu="{StaticResource DecisionTableManagerContextMenu}"
+                              DataContext="{Binding DecisionTableManager}"
+                              ItemContainerStyle="{StaticResource DecisionTableItemStyle}"
+                              ItemsSource="{Binding DecisionTables}"
+                              ItemTemplate="{StaticResource DecisionTableItemTemplate}"
+                              Style="{StaticResource DefaultTreeViewItemStyle}">
+                    <TreeViewItem.Header>
+                        <TextBlock Text="{Binding DecisionTables.Count, StringFormat='{}Decision Tables ({0})', FallbackValue='Decision Tables'}" />
+                    </TreeViewItem.Header>
+                </TreeViewItem>
+            </TreeViewItem>
+        </TreeView>
+    </Grid>
+</DockingLibrary:View>

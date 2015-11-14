@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="7a627be9-2181-404c-ae1b-beec4cff954f" name="HistorySession" linkedPackageId="d683467f-5f01-4c6f-b6d7-9675de214d00" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="c51846fb-55d7-4a31-9c63-3ae124df7e1b">
+      <profileInstance Id="57a1ede5-79ac-46ad-86bf-3b562ee683bf" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="415f1e99-e7e5-42a8-971a-1dc821dc81d7">
+      <profileInstance Id="72fa9462-28c9-445c-a478-e2e504ed1737" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d053ae5b-be4e-41cf-8a24-d04e55e63014" name="HistorySession" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5b0ac9c9-92e6-4856-adf8-497b9c80c015" />
+        <targetEnds>
+          <association Id="20dfaba9-e94e-49f6-8cd6-58066127bcbf" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="d29dcbae-86a2-400d-a31a-b650cb52f71d" LastKnownName="HistoryEntry" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b0ac9e95-9bdc-4db0-902c-e647b8b0b22f" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="4535f96b-15a5-40d4-9ab1-5183917d5e3b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fcf5ac98-ee6e-4ff0-9abd-5c2f88034762" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <lowerValueInternal>
+                    <literalString Id="4ae1fd2e-892f-47a1-9563-243e843492bb" name="Lower" value="*">
+                      <elementDefinition Id="c087987c-6939-4007-8dbd-5274eb200caf" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="c96fc114-e757-444e-a976-4afdcb3ee348" name="Upper" value="*">
+                      <elementDefinition Id="364535b5-4a83-45ff-a591-04b610a604c9" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="1654df50-e126-4821-87f0-49a59dc45600" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="18ba6d50-5c5f-42a7-9ece-74f3dfd5353f" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="59bb48b6-efee-4a0e-a812-51eb4d88aa50" name="AddEntry" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="96632262-91c5-4963-bcc9-033dd9f97127" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8e4ec2ab-dc36-42de-ad17-3ce0aa5be174" name="entry" direction="In" isUnique="false">
+                  <elementDefinition Id="a9f65b6a-e220-49ea-a567-4315957059ec" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b4eac405-d0ff-446f-8165-6a957b5b8e3d" LastKnownName="HistoryEntry" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d29dcbae-86a2-400d-a31a-b650cb52f71d" name="HistoryEntry" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="2a23fe3c-e153-4748-8353-7e275c363347" />
+        <targetEnds>
+          <association Id="67a30d7a-14d1-48ea-836c-8b5b5ed39ba2" isDerived="false" sourceEndRoleName="" targetEndRoleName="Action" isLeaf="false" isAbstract="false">
+            <enumerationMoniker Id="59924f43-0f00-43ee-b024-70a49c349542" LastKnownName="HistoryAction" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5105f5ba-bc2e-44cc-a71f-9d9183c194f4" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="65c552fd-8288-4c72-a7d3-e8864c827462" name="Lower" value="*">
+                      <elementDefinition Id="f6e2cf6a-19be-4069-9812-7cb500f2b7b6" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="567444f3-0932-4ca1-9fd8-420958322bb6" name="Upper" value="*">
+                      <elementDefinition Id="28579e8c-c5d8-43d5-8d9c-2ba83271cb45" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="af579947-6935-4c67-a689-31b8bec1d0af" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b002c871-769b-4921-9529-e2037b6d94ab" name="Action" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b07444b5-59a3-43b4-8ee0-f8fd11fc6380" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="bead6cb2-6b2a-4c74-9a77-e2ae2866f18c" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="364181be-7325-4533-bc69-81db4a6e8990" name="EntityId" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c8a6d337-20e1-418e-99be-fd0a9a3e848f" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="750feddd-1b91-45ac-9b03-903896cf3347" LastKnownName="EntityId" />
+            </type_NamedElement>
+          </property>
+          <property Id="19c1f658-88c6-4ecc-8317-59e590465234" name="PropertyValues" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3de838c5-adab-4577-a82f-90b885fd7fd0" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="c8dd4cc5-89ee-42fc-ae3d-2a5f1bb47aa8" LastKnownName="EntityPropertyData[]" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="59924f43-0f00-43ee-b024-70a49c349542" name="HistoryAction" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="54322a67-0187-4c68-9c41-0e4e4f7cb93c" />
+        <ownedLiterals>
+          <enumerationLiteral Id="172e1542-0e78-409d-8bd5-c0183f0d5982" name="EntityDeleted">
+            <elementDefinition Id="69b8f0e8-dbb6-4d2b-bdf5-80c20cde9109" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="ac687fec-2af3-483a-9e37-15404041a3ed" name="EntityInserted">
+            <elementDefinition Id="af94552a-0ba3-45a4-89ed-ecb438053b04" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="b61ee41a-cb44-404f-b7ec-d7eab2483fe3" name="PropertiesChanged">
+            <elementDefinition Id="7ae9f2de-9244-4120-b7f3-14db725c65d2" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="750feddd-1b91-45ac-9b03-903896cf3347" name="EntityId" isAbstract="false" isLeaf="false" cachedFullName="DTArchitecture::EntityId">
+        <elementDefinition Id="3d91e2d2-1115-40d8-ad66-0b89dc06b0fc" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="c8dd4cc5-89ee-42fc-ae3d-2a5f1bb47aa8" name="EntityPropertyData[]" isAbstract="false" isLeaf="false" cachedFullName="EntityPropertyData[]">
+        <elementDefinition Id="4e15f2e1-ff23-4763-84c7-c734f22af826" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="b4eac405-d0ff-446f-8165-6a957b5b8e3d" name="HistoryEntry" isAbstract="false" isLeaf="false" cachedFullName="DTArchitecture::HistoryEntry">
+        <elementDefinition Id="2a23fe3c-e153-4748-8353-7e275c363347" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="eb4acffc-b0ae-45a4-b8cd-6a33f15088a0" name="HistoryService" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d8bcac5b-883e-45ec-af88-0bee703450a5" />
+        <targetEnds>
+          <association Id="7b8382d0-34c1-4eb8-b1d2-2d0df94d56d5" isDerived="false" sourceEndRoleName="" targetEndRoleName="UndoSessions" isLeaf="false" isAbstract="false">
+            <classMoniker Id="d053ae5b-be4e-41cf-8a24-d04e55e63014" LastKnownName="HistorySession" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="66ce5898-774f-439c-bcda-b1d55815890d" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e97c4772-b5a4-411e-8efd-061d3f43470f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1cbfeedd-b4f2-4419-a747-dbe9545a06c6" name="UndoSessions" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <lowerValueInternal>
+                    <literalString Id="d55cfa86-9b9a-4ace-bf6e-d82e8bfebe9a" name="Lower" value="*">
+                      <elementDefinition Id="bf97615f-10a8-4f04-8a16-09f815042be4" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="41b2c591-087a-44d1-a817-4f20a20c78e9" name="Upper" value="*">
+                      <elementDefinition Id="d55c9416-14ea-434e-98d2-1937415895a8" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="831634f4-92e2-49ed-a850-9876ec1a55d7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="aeb485cd-cb88-4320-a1b9-cc4e988f028e" />
+          </association>
+          <association Id="e3c04c08-b415-447b-8dc9-3bf126b2e9d0" isDerived="false" sourceEndRoleName="" targetEndRoleName="RedoSessions" isLeaf="false" isAbstract="false">
+            <classMoniker Id="d053ae5b-be4e-41cf-8a24-d04e55e63014" LastKnownName="HistorySession" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1bb91de5-f082-41c2-8c5a-f8f2d9eaa318" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="567da3fd-c4ab-4dd6-b80e-afe1b68bd2e8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8800eff5-9fe9-41cf-a4b0-1cf11a3d2350" name="RedoSessions" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <lowerValueInternal>
+                    <literalString Id="b9012c7b-54b8-4883-8504-aa9957900cc5" name="Lower" value="*">
+                      <elementDefinition Id="3a093eac-a5de-4e0e-ac2f-880bcb148d93" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="b5238df6-df58-4e0f-9c22-492dc2c13ee9" name="Upper" value="*">
+                      <elementDefinition Id="c4f07a64-a7ec-4974-a0d5-99e173153b81" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="6de4a0da-d15a-4554-9194-33f523ac730f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ec8eb4fd-f413-4667-9c0f-a82ede852f1e" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="c46c31d2-4976-4ac4-8bcb-085b15a23f04" name="BeginSession" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4684ea44-bd62-43e9-a4b4-0ce006b671b2" />
+          </operation>
+          <operation Id="a86620f7-c494-4a28-86ad-ec8da1ac02c4" name="EndSession" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="946da9e2-493b-49bc-9f1e-8819888e94c5" />
+          </operation>
+          <operation Id="d890ce0a-0e50-4db4-a219-eec017981043" name="Redo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2f557c2c-550b-44d7-ad13-64ab62abeaac" />
+          </operation>
+          <operation Id="7b4f54aa-6282-498f-980a-59487bcc0832" name="Undo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9c16dc3a-3e39-46a8-a3fd-95a2135d742b" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="d683467f-5f01-4c6f-b6d7-9675de214d00" name="DTArchitecture">
+    <elementDefinition Id="6282e541-5655-40cc-9833-bb6ab43acd63" />
+  </package>
+</logicalClassDesignerModel>

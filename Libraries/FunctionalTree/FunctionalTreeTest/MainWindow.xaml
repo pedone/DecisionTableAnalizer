@@ -1,0 +1,35 @@
+﻿<Window x:Class="FunctionalTreeTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="455" Width="714">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Grid.Column="0" Width="200" HorizontalAlignment="Left">
+            <Button Click="FillList_Click">Fill List</Button>
+            <Button Click="EmptyList_Click">Empty List</Button>
+            <Button Click="Test_Click">Test Button</Button>
+            <ComboBox Name="ElementSelectionComboBox" HorizontalContentAlignment="Center">
+                <ComboBoxItem IsSelected="True">Root</ComboBoxItem>
+                <ComboBoxItem>1</ComboBoxItem>
+                <ComboBoxItem>2</ComboBoxItem>
+                <ComboBoxItem>3</ComboBoxItem>
+                <ComboBoxItem>4</ComboBoxItem>
+                <ComboBoxItem>5</ComboBoxItem>
+                <ComboBoxItem>6</ComboBoxItem>
+                <ComboBoxItem>7</ComboBoxItem>
+                <ComboBoxItem>8</ComboBoxItem>
+                <ComboBoxItem>9</ComboBoxItem>
+            </ComboBox>
+            <Button Click="RaiseSpreadEvent_Click">Raise Spread Event</Button>
+            <Button Click="RaiseBubbleEvent_Click">Raise Bubble Event</Button>
+            <Button Click="RaiseTunnelEvent_Click">Raise Tunnel Event</Button>
+            
+            <TextBox Margin="0,10,0,0" Name="NewHeader"/>
+            <Button Click="SetHeader_Click">Set Header</Button>
+        </StackPanel>
+    </Grid>
+</Window>

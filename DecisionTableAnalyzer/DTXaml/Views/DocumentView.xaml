@@ -1,0 +1,15 @@
+﻿<DockingLibrary:View x:Class="DTXaml.Views.DocumentView"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:controls="clr-namespace:UICore.Resources.Controls;assembly=UICore"
+                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                     xmlns:DockingLibrary="clr-namespace:DockingLibrary;assembly=DockingLibrary"
+                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                     d:DesignHeight="300"
+                     d:DesignWidth="600"
+                     Header="{Binding Header}"
+                     mc:Ignorable="d">
+    <Grid Margin="3">
+        <FlowDocumentScrollViewer Document="{Binding Document}" />
+    </Grid>
+</DockingLibrary:View>

@@ -1,0 +1,147 @@
+﻿<DockingLibrary:View x:Class="DTXaml.Views.RequirementManagerView"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:controls="clr-namespace:UICore.Resources.Controls;assembly=UICore"
+                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                     xmlns:DockingLibrary="clr-namespace:DockingLibrary;assembly=DockingLibrary"
+                     xmlns:dtcore="clr-namespace:DTCore;assembly=DTCore"
+                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                     d:DesignHeight="300"
+                     d:DesignWidth="600"
+                     Header="Requirement Manager"
+                     mc:Ignorable="d">
+    <DockingLibrary:View.Resources>
+        <Style TargetType="{x:Type ListViewItem}">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            <EventSetter Event="PreviewMouseDown" Handler="RequirementItem_MouseDown" />
+        </Style>
+
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="Margin" Value="3" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+
+    </DockingLibrary:View.Resources>
+    <Grid Margin="3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="1.8*" />
+        </Grid.ColumnDefinitions>
+
+        <!--  Requirements Overview  -->
+        <Grid Grid.Column="0" Margin="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <ListView Grid.Row="0"
+                      ItemsSource="{Binding FunctionalRequirements}"
+                      SelectedItem="{Binding SelectedRequirement,
+                                             Mode=OneWayToSource}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="260"
+                                        DisplayMemberBinding="{Binding Name}"
+                                        Header="Functional Requirement" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <ListView Grid.Row="1"
+                      Margin="0,3,0,0"
+                      ItemsSource="{Binding NonFunctionalRequirements}"
+                      SelectedItem="{Binding SelectedRequirement,
+                                             Mode=OneWayToSource}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="260"
+                                        DisplayMemberBinding="{Binding Name}"
+                                        Header="NonFunctional Requirement" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <StackPanel Grid.Row="2"
+                        Margin="0,3,3,3"
+                        Orientation="Horizontal">
+                <controls:ToolButton Width="24"
+                                     Height="24"
+                                     Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.RequirementManagerViewNewRequirementCommand}"
+                                     CommandParameter="{Binding}"
+                                     DisabledIcon="pack://application:,,,/DTXaml;component/Content/Images/add_disabled.png"
+                                     Icon="pack://application:,,,/DTXaml;component/Content/Images/add.png"
+                                     ToolTip="New requirement" />
+                <controls:ToolButton Width="24"
+                                     Height="24"
+                                     Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.RequirementManagerViewRemoveRequirementCommand}"
+                                     CommandParameter="{Binding}"
+                                     DisabledIcon="pack://application:,,,/DTXaml;component/Content/Images/delete_disabled.png"
+                                     Icon="pack://application:,,,/DTXaml;component/Content/Images/delete.png"
+                                     ToolTip="Delete requirement" />
+                <controls:ToolButton Width="24"
+                                     Height="24"
+                                     Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.RequirementManagerViewEditRequirementCommand}"
+                                     CommandParameter="{Binding}"
+                                     DisabledIcon="pack://application:,,,/DTXaml;component/Content/Images/edit_disabled.png"
+                                     Icon="pack://application:,,,/DTXaml;component/Content/Images/edit.png"
+                                     ToolTip="Edit requirement" />
+            </StackPanel>
+        </Grid>
+
+        <!--  Requirement Details  -->
+        <GroupBox Grid.Column="1"
+                  Margin="3"
+                  Header="Details">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <!--  Name  -->
+                    <TextBlock Grid.Row="0"
+                               Grid.Column="0"
+                               Style="{StaticResource TextBlockHeaderStyle}"
+                               Text="Name" />
+                    <TextBox Grid.Row="0"
+                             Grid.Column="1"
+                             IsReadOnly="True"
+                             Text="{Binding SelectedRequirement.Name}" />
+
+                    <!--  Priority  -->
+                    <TextBlock Grid.Row="1"
+                               Grid.Column="0"
+                               Style="{StaticResource TextBlockHeaderStyle}"
+                               Text="Priority" />
+                    <TextBox Grid.Row="2"
+                             Grid.Column="1"
+                             IsReadOnly="True"
+                             Text="{Binding SelectedRequirement.Priority}" />
+                </Grid>
+
+                <!--  Description  -->
+                <TabControl Grid.Row="2" Margin="0,5">
+                    <TabItem Header="Description">
+                        <TextBox Grid.Row="1"
+                                 Margin="0"
+                                 IsReadOnly="True"
+                                 Text="{Binding SelectedRequirement.Description}" />
+                    </TabItem>
+                </TabControl>
+
+            </Grid>
+        </GroupBox>
+    </Grid>
+</DockingLibrary:View>

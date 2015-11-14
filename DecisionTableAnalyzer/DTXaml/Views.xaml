@@ -1,0 +1,36 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:core="clr-namespace:DTCore;assembly=DTCore"
+                    xmlns:dialogs="clr-namespace:DTXaml.Dialogs;assembly=DTXaml"
+                    xmlns:viewModels="clr-namespace:ViewModels;assembly=ViewModels"
+                    xmlns:views="clr-namespace:DTXaml.Views;assembly=DTXaml">
+
+    <!--  Dialogs  -->
+    <core:TypeMapping x:Key="{x:Type viewModels:ProjectDialogModel}" Type="{x:Type dialogs:ProjectDialog}" />
+    <core:TypeMapping x:Key="{x:Type viewModels:RequirementDialogModel}" Type="{x:Type dialogs:RequirementDialog}" />
+    <core:TypeMapping x:Key="{x:Type viewModels:AboutDialogModel}" Type="{x:Type dialogs:AboutDialog}" />
+    <core:TypeMapping x:Key="{x:Type viewModels:DecisionTableDialogModel}" Type="{x:Type dialogs:DecisionTableDialog}" />
+    <core:TypeMapping x:Key="{x:Type viewModels:ConditionDialogModel}" Type="{x:Type dialogs:ConditionDialog}" />
+    <core:TypeMapping x:Key="{x:Type viewModels:ActionDialogModel}" Type="{x:Type dialogs:ActionDialog}" />
+    <core:TypeMapping x:Key="{x:Type viewModels:StateDialogModel}" Type="{x:Type dialogs:StateDialog}" />
+    <core:TypeMapping x:Key="{x:Type viewModels:AddMissingRulesDialogModel}" Type="{x:Type dialogs:AddMissingRulesDialog}" />
+    <core:TypeMapping x:Key="{x:Type viewModels:RemoveRedundantRulesDialogModel}" Type="{x:Type dialogs:RemoveRedundantRulesDialog}" />
+    <core:TypeMapping x:Key="{x:Type viewModels:CheckForCompletenessDialogModel}" Type="{x:Type dialogs:CheckForCompletenessDialog}" />
+    <core:TypeMapping x:Key="{x:Type viewModels:CheckForRedundancyDialogModel}" Type="{x:Type dialogs:CheckForRedundancyDialog}" />
+    <core:TypeMapping x:Key="{x:Type viewModels:CheckForContradictionDialogModel}" Type="{x:Type dialogs:CheckForContradictionDialog}" />
+    <core:TypeMapping x:Key="{x:Type viewModels:RemoveContradictedRulesDialogModel}" Type="{x:Type dialogs:RemoveContradictedRulesDialog}" />
+    <core:TypeMapping x:Key="{x:Type viewModels:PrintRequirementsDialogModel}" Type="{x:Type dialogs:PrintRequirementsDialog}" />
+    <core:TypeMapping x:Key="{x:Type viewModels:PrintPreviewDialogModel}" Type="{x:Type dialogs:PrintPreviewDialog}" />
+    <core:TypeMapping x:Key="{x:Type viewModels:PrintDecisionTablesDialogModel}" Type="{x:Type dialogs:PrintDecisionTablesDialog}" />
+
+    <!--  Views  -->
+    <core:TypeMapping x:Key="{x:Type viewModels:ProjectExplorerViewModel}" Type="{x:Type views:ProjectExplorerView}" />
+    <core:TypeMapping x:Key="{x:Type viewModels:StartViewModel}" Type="{x:Type views:StartView}" />
+    <core:TypeMapping x:Key="{x:Type viewModels:DocumentViewModel}" Type="{x:Type views:DocumentView}" />
+    <core:TypeMapping x:Key="{x:Type viewModels:RequirementManagerViewModel}" Type="{x:Type views:RequirementManagerView}" />
+    <core:TypeMapping x:Key="{x:Type viewModels:DecisionTableManagerViewModel}" Type="{x:Type views:DecisionTableManagerView}" />
+    <core:TypeMapping x:Key="{x:Type viewModels:DecisionTableDetailsViewModel}" Type="{x:Type views:DecisionTableDetailsView}" />
+    <core:TypeMapping x:Key="{x:Type viewModels:DecisionTableViewModel}" Type="{x:Type views:DecisionTableView}" />
+    <core:TypeMapping x:Key="{x:Type viewModels:StatusViewModel}" Type="{x:Type views:StatusView}" />
+
+</ResourceDictionary>

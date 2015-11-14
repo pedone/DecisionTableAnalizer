@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="14efa264-4141-46f3-ba44-890d9556b91b" name="FunctionalRequirements" linkedPackageId="77021b33-d69f-42a0-bba0-f54dc0f23fa6" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="a6727132-3057-484e-8d4c-8b0233071927" name="Benutzer" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f034e286-2315-4167-a9d9-e4387dfaa1af" />
+        <targetEnds>
+          <association Id="7a68fcd5-afe5-42cf-bcd7-ed5992e4e764" isDerived="false" sourceEndRoleName="Benutzer" targetEndRoleName="Projekt anlegen" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="d1ed58f3-90a6-49f8-8c23-a2500b128f4c" LastKnownName="Projekt anlegen" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e257dd0a-adc1-4db6-99fb-0deabafd571a" name="Benutzer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="8af1c388-1002-4534-97dc-7f57fbf485c4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7ced4c48-efd7-4392-ba0c-ab4425fa1951" name="Projekt anlegen" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f85b2884-53cf-49d2-8ac1-77a5eed21d56" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="274e468f-b363-454f-84a5-b28b69047cc2" />
+          </association>
+          <association Id="f45a112c-bd72-4fc9-9d31-ae19dcc57d5f" isDerived="false" sourceEndRoleName="Benutzer" targetEndRoleName="Projekt laden/speichern" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="f6b191bc-a251-4944-a174-cf899d41b53a" LastKnownName="Projekt laden" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ee89e806-e7b6-4371-9f41-93a482e9cb99" name="Benutzer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="f2bb00aa-7d8d-43fe-8444-5fb35d2fb9df" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e956c29d-9eeb-4430-a396-99e3389a67d5" name="Projekt laden/speichern" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="772dbcb3-c05e-40a9-8916-7c980a4a6f2a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d30aa230-dff5-429e-8d7e-5b9a0ccba0a3" />
+          </association>
+          <association Id="47a4084d-e82c-4686-b65b-92510d30546b" isDerived="false" sourceEndRoleName="Benutzer" targetEndRoleName="Projekt speichern" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="26c59486-5dc3-4292-9b51-b5b0de02ef5e" LastKnownName="Projekt speichern" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5327bd10-bdfa-492b-995f-53f3ec8a9849" name="Benutzer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="9055a4cb-e661-4027-83da-9e6142268bc7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="cf77c477-412a-4d8e-a2a5-2c5a2d3e3288" name="Projekt speichern" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="bca2d788-87e3-476f-a81d-f5526cb4a605" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e4a2c632-b3eb-4b37-b96e-a728808e5426" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="36a586e7-9ec8-453c-aa9e-b4fbd541b91d" name="Entscheidungstabelle grafisch anzeigen" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f7418e26-3362-4245-b47d-64a2e660ebdb" />
+        <subjects>
+          <subsystemMoniker Id="a4312a1a-40b3-48ff-812e-cabe46ddc8f8" LastKnownName="Entscheidungstabelle - Analyse" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="edb0a45b-e9e6-4a65-9ae4-34321761884e" name="Entscheidungstabelle - Verwaltung" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="48875171-e0d0-4e3a-be29-4e216353da13" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="b2538e7e-9948-4f1b-84fe-d6e61fde2441" name="Anforderungen" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="423c310d-0cb3-4e6b-b3f4-2a14e8c8a850" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="7b90c8c5-2570-45ed-b4aa-f6d1bd43376d" name="Anforderungen bearbeiten" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a21d3b41-d6c9-46e6-9084-882a24a40c9e" />
+        <subjects>
+          <subsystemMoniker Id="b2538e7e-9948-4f1b-84fe-d6e61fde2441" LastKnownName="Anforderungen" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="fc47773f-5f9a-49b5-8e76-303fbc0ffd03" name="Anforderungen drucken" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="467e916d-b177-4faf-b5f6-8494014fb08b" />
+        <subjects>
+          <subsystemMoniker Id="b2538e7e-9948-4f1b-84fe-d6e61fde2441" LastKnownName="Anforderungen" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="6df2234c-03cd-4017-aff8-67ef1a4717df" name="Entscheidungstabellen anlegen" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="958d0d92-cc28-4243-a176-31b007e61e6d" />
+        <subjects>
+          <subsystemMoniker Id="edb0a45b-e9e6-4a65-9ae4-34321761884e" LastKnownName="Entscheidungstabelle - Verwaltung" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="02dfa253-2223-4079-9b93-039de4c8c30d" name="Konditionen und Aktionen anlegen" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3272aec0-4e32-4666-9449-ae516c607ff2" />
+        <subjects>
+          <subsystemMoniker Id="edb0a45b-e9e6-4a65-9ae4-34321761884e" LastKnownName="Entscheidungstabelle - Verwaltung" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="077df874-6203-4b6d-816a-369eae06d80f" name="Regeln automatisch anlegen" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="45172729-58c4-4d5d-9658-0070bf6353e5" />
+        <subjects>
+          <subsystemMoniker Id="edb0a45b-e9e6-4a65-9ae4-34321761884e" LastKnownName="Entscheidungstabelle - Verwaltung" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="42f5f6b5-ed46-4cdf-88db-87cbdc5452cb" name="Regeln manuell anlegen" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5ea99e11-817d-4600-be28-511b7e190b1d" />
+        <subjects>
+          <subsystemMoniker Id="edb0a45b-e9e6-4a65-9ae4-34321761884e" LastKnownName="Entscheidungstabelle - Verwaltung" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <useCaseModelRootHasTypes>
+      <useCase Id="4b602f05-08e5-485c-9785-1be34826425b" name="Regeln bearbeiten" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ebd94877-4c43-4b80-bb17-f973eb88733b" />
+        <subjects>
+          <subsystemMoniker Id="edb0a45b-e9e6-4a65-9ae4-34321761884e" LastKnownName="Entscheidungstabelle - Verwaltung" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="a4342efd-353a-47de-a174-d01b94aa5eda" name="Entscheidungstabelle vereinfachen" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ceec1cfd-bccf-4646-875a-ae3fe65b1a51" />
+        <subjects>
+          <subsystemMoniker Id="a4312a1a-40b3-48ff-812e-cabe46ddc8f8" LastKnownName="Entscheidungstabelle - Analyse" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="43d2c67d-aab4-493f-ac62-fee1b3f5b388" name="Entscheidungstabelle auf Redundanz überprüfen" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="df805cf7-f40c-48fc-b02a-47e6c9c13f65" />
+        <subjects>
+          <subsystemMoniker Id="a4312a1a-40b3-48ff-812e-cabe46ddc8f8" LastKnownName="Entscheidungstabelle - Analyse" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="1f24bddf-9208-4cc5-8f82-c8bceaa0f787" name="Entscheidungstabelle auf Widerspüche überprüfen" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c8e2ab6c-0423-4f30-a5d3-7a525b188728" />
+        <subjects>
+          <subsystemMoniker Id="a4312a1a-40b3-48ff-812e-cabe46ddc8f8" LastKnownName="Entscheidungstabelle - Analyse" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="1331307c-9f6e-4386-893b-dfc42a4c70de" name="Entscheidungstabelle auf Vollständigkeit überprüfen" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="bf3800be-811f-459e-9320-e51bf8b30569" />
+        <subjects>
+          <subsystemMoniker Id="a4312a1a-40b3-48ff-812e-cabe46ddc8f8" LastKnownName="Entscheidungstabelle - Analyse" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="28d8310a-ba23-43cc-b510-8c23ed4ef5d5" name="Entscheidungstabelle drucken" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="17303ce0-d194-4847-9310-21591cca65fc" />
+        <subjects>
+          <subsystemMoniker Id="edb0a45b-e9e6-4a65-9ae4-34321761884e" LastKnownName="Entscheidungstabelle - Verwaltung" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="a4312a1a-40b3-48ff-812e-cabe46ddc8f8" name="Entscheidungstabelle - Analyse" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4f4e7226-7391-4d1b-8d5b-5cd382e62829" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="16ac2187-58b7-4348-8cd7-41f597ac417b" name="Projekt" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="02585306-5952-40df-9fb6-febdbd0a80b2" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="d1ed58f3-90a6-49f8-8c23-a2500b128f4c" name="Projekt anlegen" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c2f3d305-4666-4988-bb9c-2385ae0b0d43" />
+        <subjects>
+          <subsystemMoniker Id="16ac2187-58b7-4348-8cd7-41f597ac417b" LastKnownName="Projekt" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="f6b191bc-a251-4944-a174-cf899d41b53a" name="Projekt laden" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="79954666-a2c9-4dac-982e-c56190e6a74f" />
+        <subjects>
+          <subsystemMoniker Id="16ac2187-58b7-4348-8cd7-41f597ac417b" LastKnownName="Projekt" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <useCaseModelRootHasTypes>
+      <actor Id="1ee64420-b324-4359-81b1-f72a16522754" name="Stakeholder" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="25936ed6-9d77-419c-ab8a-39d65fd8426a" />
+        <targetEnds>
+          <association Id="bacc7c9f-f508-40bf-9e9a-57d195968e4e" isDerived="false" sourceEndRoleName="Benutzer" targetEndRoleName="Anforderungen bearbeiten" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="7b90c8c5-2570-45ed-b4aa-f6d1bd43376d" LastKnownName="Anforderungen bearbeiten" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="50758879-1e30-4c06-bc9c-e473a9893c17" name="Benutzer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="eccbe584-7fee-42b4-9d85-2b54dbb26b2b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="95bbeac8-8549-45f4-aa64-05c517fadcd8" name="Anforderungen bearbeiten" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8aad2450-7935-4131-99e1-2d993342b2ca" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="770deeb6-3aac-4692-9d74-f5eaaacae655" />
+          </association>
+          <association Id="695518e4-db66-497a-a173-4801b7a90731" isDerived="false" sourceEndRoleName="Benutzer" targetEndRoleName="Anforderungen drucken" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="fc47773f-5f9a-49b5-8e76-303fbc0ffd03" LastKnownName="Anforderungen drucken" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6f21ff0b-d94f-454c-a854-eaf65892c7a3" name="Benutzer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="24715b85-42cd-46a6-ad88-37ed321eca23" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6b054dcd-acac-47b1-b9eb-b59580aa273b" name="Anforderungen drucken" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d0ed6c45-b3dc-44d9-b4ce-c11700cd161a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="416549d0-6597-4c0b-a7f4-71a32685181e" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="55552379-9d5e-4060-9a05-ab9a23af6d4c" name="Benutzer" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8f18811b-12b8-412d-bd46-b3e9b3d35750" />
+        <targetEnds>
+          <association Id="cda19a3f-20af-4676-8d51-44ad24f230fe" isDerived="false" sourceEndRoleName="Benutzer" targetEndRoleName="Entscheidungstabelle anlegen" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="6df2234c-03cd-4017-aff8-67ef1a4717df" LastKnownName="Entscheidungstabellen anlegen" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2d05e229-2291-40fd-b700-90fb606c0d5f" name="Benutzer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e8790983-4c87-4294-b36b-ec69066afa5d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ad3f8a2b-ff02-4e5f-bde3-0de654058d01" name="Entscheidungstabelle anlegen" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="7922c740-e22b-4f9d-bd8f-9ef70a26526f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="7ac08bad-7f31-45a4-abac-5a4ce778b4d3" />
+          </association>
+          <association Id="a3296875-799d-4f77-8021-246cacc67a8f" isDerived="false" sourceEndRoleName="Benutzer" targetEndRoleName="Konditionen und Aktionen anlegen" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="02dfa253-2223-4079-9b93-039de4c8c30d" LastKnownName="Konditionen und Aktionen anlegen" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="bc7b3373-2882-474d-afe1-dcfaa8aac514" name="Benutzer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="6636021b-309e-4139-a2d0-76fa5bc27240" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f87232d6-9944-4b1a-aa6b-a3cd53baddd1" name="Konditionen und Aktionen anlegen" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="79ca3959-0297-40b3-a373-ba1f72b00bbc" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f12d30bb-17ae-4d22-b853-65c71c872d4e" />
+          </association>
+          <association Id="78a240e4-7f71-4529-b797-63207439f96a" isDerived="false" sourceEndRoleName="Benutzer" targetEndRoleName="Entscheidungstabelle drucken" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="28d8310a-ba23-43cc-b510-8c23ed4ef5d5" LastKnownName="Entscheidungstabelle drucken" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6ffadd1d-fc8b-420b-b33a-ffaada454536" name="Benutzer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e4436e0d-c3de-49f6-a355-52e0c6f377c8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2fb464c4-d118-4b73-a0bd-113de23a46b7" name="Entscheidungstabelle drucken" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6152989e-1848-4eff-92b6-74b9bb21a7a9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="6d618540-dbd8-486d-91fd-809857ac6238" />
+          </association>
+          <association Id="a2227957-58bc-4156-8533-2be95ee795cd" isDerived="false" sourceEndRoleName="Benutzer" targetEndRoleName="Regeln automatisch anlegen" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="077df874-6203-4b6d-816a-369eae06d80f" LastKnownName="Regeln automatisch anlegen" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f16e6845-ec56-4ebf-9727-e15edd58c695" name="Benutzer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2e3b46bc-cd9b-4104-8ee9-036ff3f6198d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="25ad7594-a03d-4c98-9725-d30910b9e304" name="Regeln automatisch anlegen" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="7f89cd84-41cf-493b-b964-aedb74cd0945" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="4f67e054-5fd0-4a26-874b-17b1337a6013" />
+          </association>
+          <association Id="32ae4b93-19a0-4855-9d6b-d63ffb5f5659" isDerived="false" sourceEndRoleName="Benutzer" targetEndRoleName="Regeln manuell anlegen" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="42f5f6b5-ed46-4cdf-88db-87cbdc5452cb" LastKnownName="Regeln manuell anlegen" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f061776e-fe35-4fa8-b849-c6a8c75ad5aa" name="Benutzer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="98b23aa8-04d2-4697-b8b3-4daab070458b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e219b621-b2ba-4dc4-b583-8c5537118f08" name="Regeln manuell anlegen" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="beb66072-2779-48d5-af8b-97d3371ff2c4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="fe6fd1fd-2a34-417c-9370-62b2f1d4daf5" />
+          </association>
+          <association Id="9d49fbeb-dcfc-45c3-9af4-da37b50edd8f" isDerived="false" sourceEndRoleName="Benutzer" targetEndRoleName="Regeln bearbeiten" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="4b602f05-08e5-485c-9785-1be34826425b" LastKnownName="Regeln bearbeiten" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9c14e767-836e-46bf-beb3-22be354734b7" name="Benutzer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="fc311acd-f52f-4e0c-9fb4-451b8d624c85" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="788f6455-3384-4148-841c-5b8380e7bdcf" name="Regeln bearbeiten" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="2cdc7daa-fae7-4a80-a0ca-ac8ba7dda4c8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="4784afc0-ddde-4ff1-9dce-e2307f3ac012" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="5010a710-e587-4f29-a599-681d9b112b4c" name="Benutzer" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5129bfd8-c9cd-46af-9ee0-a4eaa972afe4" />
+        <targetEnds>
+          <association Id="fbdbe430-612d-403f-8103-420b21700bd3" isDerived="false" sourceEndRoleName="Benutzer" targetEndRoleName="Entscheidungstabelle grafisch anzeigen" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="36a586e7-9ec8-453c-aa9e-b4fbd541b91d" LastKnownName="Entscheidungstabelle grafisch anzeigen" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="beb93427-7d8f-4000-ab08-ddb5657a2eb3" name="Benutzer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="9872f196-de1c-4dc4-9eff-fbe1738bdd8f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0c1a67c4-ed29-4c0f-b241-643462afc7b7" name="Entscheidungstabelle grafisch anzeigen" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="eef85caf-bcf4-4187-bb81-c4642867f01c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="07fe5f21-55bc-4252-829c-219d975938a6" />
+          </association>
+          <association Id="7a44213c-5c18-482e-af07-14ec6f438e01" isDerived="false" sourceEndRoleName="Benutzer" targetEndRoleName="Entscheidungstabelle vereinfachen" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="a4342efd-353a-47de-a174-d01b94aa5eda" LastKnownName="Entscheidungstabelle vereinfachen" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b4c00fa6-376f-44d1-afc9-53888cf48f94" name="Benutzer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="f1eeff50-932d-4afb-9e7d-da22c72f48da" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="15a6809f-1831-447e-a428-ead73b68f068" name="Entscheidungstabelle vereinfachen" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="29b4d9b9-def0-4a27-bead-39d65bd67cb8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="86e6e68b-185b-4aed-9289-9fa0ce44eee4" />
+          </association>
+          <association Id="a9522088-accf-4329-8fb2-2cbeb412bed7" isDerived="false" sourceEndRoleName="Benutzer" targetEndRoleName="Entscheidungstabelle auf Redundanz überprüfen" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="43d2c67d-aab4-493f-ac62-fee1b3f5b388" LastKnownName="Entscheidungstabelle auf Redundanz überprüfen" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8675a1ef-e59c-4048-9a91-14ef58b7915e" name="Benutzer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="90850afb-a623-4caf-a715-ff011c990322" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d55f8209-bdc9-41cc-a388-9e8cc886d82f" name="Entscheidungstabelle auf Redundanz überprüfen" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9198f173-9e7c-4606-98a9-a4b7af212b68" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1846fc0c-2976-4c6c-9369-2ce714b11841" />
+          </association>
+          <association Id="bfb78c30-227d-4c93-b07c-682a885e5b55" isDerived="false" sourceEndRoleName="Benutzer" targetEndRoleName="Entscheidungstabelle auf Widerspüche überprüfen" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="1f24bddf-9208-4cc5-8f82-c8bceaa0f787" LastKnownName="Entscheidungstabelle auf Widerspüche überprüfen" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="71066e0a-5063-48ca-a07c-8fc49bce8d49" name="Benutzer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="1b652402-b85a-4076-87c6-255d8cb8f2cd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="48de58e1-5a8e-4c40-a1e9-3b24db7516ff" name="Entscheidungstabelle auf Widerspüche überprüfen" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="59401750-621a-4d29-b73b-3a14ca8c4ab6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="8ce4cb7d-dbb4-460c-ac5c-d63d8e5d9320" />
+          </association>
+          <association Id="8aa5a5e5-d907-4dd3-8be6-d5b5a704b7a6" isDerived="false" sourceEndRoleName="Benutzer" targetEndRoleName="Entscheidungstabelle auf Vollständigkeit überprüfen" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="1331307c-9f6e-4386-893b-dfc42a4c70de" LastKnownName="Entscheidungstabelle auf Vollständigkeit überprüfen" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ae74de5b-c1be-4dbb-80f2-b4220abf28c7" name="Benutzer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="553cc678-eb1d-4d8c-b17c-eed4b1624013" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="25d1e309-b9c6-449e-b7d9-5d41e7f91589" name="Entscheidungstabelle auf Vollständigkeit überprüfen" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="526dc1a0-e344-4c17-bdc8-68c39858213f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="3b211c32-bb8a-41fb-a86e-1f07715c285d" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="26c59486-5dc3-4292-9b51-b5b0de02ef5e" name="Projekt speichern" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1707e267-785f-459d-9d19-a6edb6f1744b" />
+        <subjects>
+          <subsystemMoniker Id="16ac2187-58b7-4348-8cd7-41f597ac417b" LastKnownName="Projekt" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="77021b33-d69f-42a0-bba0-f54dc0f23fa6" name="DTArchitecture">
+    <elementDefinition Id="6282e541-5655-40cc-9833-bb6ab43acd63" />
+    <profileInstances>
+      <packageHasProfileInstances Id="66dd3c53-bc5a-475c-b573-9bc14c203e17">
+        <profileInstance Id="9d691a10-f83b-40cf-b762-95839ff4d639" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="299f3411-390e-41fa-8bbb-95ac0a7854b7">
+        <profileInstance Id="1aefb428-475f-4af0-9a16-7f487a2ec86d" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

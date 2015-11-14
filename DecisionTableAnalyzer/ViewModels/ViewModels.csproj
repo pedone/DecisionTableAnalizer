@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EC409C82-D144-4549-855B-6FDF496A290C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ViewModels</RootNamespace>
+    <AssemblyName>ViewModels</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationViewModel.cs" />
+    <Compile Include="Commands\ApplicationViewCloseProjectCommand.cs" />
+    <Compile Include="Commands\ApplicationViewEditProjectPropertiesCommand.cs" />
+    <Compile Include="Commands\ApplicationViewNewProjectCommand.cs" />
+    <Compile Include="Commands\ApplicationViewOpenProjectCommand.cs" />
+    <Compile Include="Commands\ApplicationViewPrintDecisionTablesCommand.cs" />
+    <Compile Include="Commands\ApplicationViewPrintRequirementsCommand.cs" />
+    <Compile Include="Commands\ApplicationViewSaveProjectAsCommand.cs" />
+    <Compile Include="Commands\ApplicationViewSaveProjectCommand.cs" />
+    <Compile Include="Commands\ApplicationViewShowAboutDialogCommand.cs" />
+    <Compile Include="Commands\ApplicationViewShowDecisionTableManagerViewCommand.cs" />
+    <Compile Include="Commands\ApplicationViewShowProjectExplorerViewCommand.cs" />
+    <Compile Include="Commands\ApplicationViewShowRequirementManagerViewCommand.cs" />
+    <Compile Include="Commands\ApplicationViewShowStartViewCommand.cs" />
+    <Compile Include="Commands\AddMissingRulesDialogSelectAllCommand.cs" />
+    <Compile Include="Commands\AddMissingRulesDialogSelectNoneCommand.cs" />
+    <Compile Include="Commands\ApplicationViewShowStatusViewCommand.cs" />
+    <Compile Include="Commands\ApplicationViewUndoCommand.cs" />
+    <Compile Include="Commands\ApplicationViewRedoCommand.cs" />
+    <Compile Include="Commands\StatusViewClearStatusCommand.cs" />
+    <Compile Include="Commands\PrintRequirementsDialogCheckUncheckElement.cs" />
+    <Compile Include="Commands\PrintRequirementsDialogSelectAllCommand.cs" />
+    <Compile Include="Commands\PrintRequirementsDialogSelectNoneCommand.cs" />
+    <Compile Include="Commands\DecisionTableViewShowDecisionTableCommand.cs" />
+    <Compile Include="Commands\DecisionTableDetailsViewShowActionDecisionTableCommand.cs" />
+    <Compile Include="Commands\DecisionTableDetailsViewShowConditionDecisionTableCommand.cs" />
+    <Compile Include="Commands\DecisionTableDetailsViewShowConditionDecisionTableDetailsCommand.cs" />
+    <Compile Include="Commands\DecisionTableDetailsViewShowActionDecisionTableDetailsCommand.cs" />
+    <Compile Include="Commands\DecisionTableDetailsViewConvertActionToFromDecisionTableCommand.cs" />
+    <Compile Include="Commands\DecisionTableDetailsViewConvertConditionToFromDecisionTableCommand.cs" />
+    <Compile Include="Commands\DecisionTableViewCheckForContradictionCommand.cs" />
+    <Compile Include="Commands\ProjectExplorerViewDeleteDecisionTableCommand.cs" />
+    <Compile Include="Commands\ProjectExplorerViewDeleteDTElementCommand.cs" />
+    <Compile Include="Commands\ProjectExplorerViewDeleteRequirementCommand.cs" />
+    <Compile Include="Commands\ProjectExplorerViewEditDecisionTablePropertiesCommand.cs" />
+    <Compile Include="Commands\ProjectExplorerViewEditDTElementPropertiesCommand.cs" />
+    <Compile Include="Commands\ProjectExplorerViewEditProjectPropertiesCommand.cs" />
+    <Compile Include="Commands\ProjectExplorerViewEditRequirementPropertiesCommand.cs" />
+    <Compile Include="Commands\ProjectExplorerViewNewActionCommand.cs" />
+    <Compile Include="Commands\ProjectExplorerViewNewConditionCommand.cs" />
+    <Compile Include="Commands\ProjectExplorerViewNewDecisionTableCommand.cs" />
+    <Compile Include="Commands\ProjectExplorerViewNewRequirementCommand.cs" />
+    <Compile Include="Commands\ProjectExplorerViewShowDecisionTableCommand.cs" />
+    <Compile Include="Commands\ProjectExplorerViewShowDecisionTableDataCommand.cs" />
+    <Compile Include="Commands\ProjectExplorerViewShowDecisionTableManagerViewCommand.cs" />
+    <Compile Include="Commands\ProjectExplorerViewShowRequirementManagerViewCommand.cs" />
+    <Compile Include="Commands\RemoveRedundantRulesDialogSelectAllCommand.cs" />
+    <Compile Include="Commands\RemoveRedundantRulesDialogSelectNoneCommand.cs" />
+    <Compile Include="Commands\DecisionTableDetailsViewRemoveActionStateCommand.cs" />
+    <Compile Include="Commands\DecisionTableDetailsViewNewActionStateCommand.cs" />
+    <Compile Include="Commands\DecisionTableDetailsViewRemoveConditionStateCommand.cs" />
+    <Compile Include="Commands\DecisionTableViewAddMissingRulesCommand.cs" />
+    <Compile Include="Commands\DecisionTableViewAddRuleCommand.cs" />
+    <Compile Include="Commands\DecisionTableViewCheckForCompletenessCommand.cs" />
+    <Compile Include="Commands\DecisionTableViewCheckForRedundancyCommand.cs" />
+    <Compile Include="Commands\DecisionTableViewExtendDecisionTableCommand.cs" />
+    <Compile Include="Commands\DecisionTableViewRemoveRuleCommand.cs" />
+    <Compile Include="Commands\DecisionTableViewResetDecisionTableCommand.cs" />
+    <Compile Include="Commands\DecisionTableViewSimplifyDecisionTableCommand.cs" />
+    <Compile Include="Commands\StartViewOpenRecentProjectCommand.cs" />
+    <Compile Include="Commands\StateDialogNewProjectStateCommand.cs" />
+    <Compile Include="Commands\DecisionTableDetailsViewNewConditionStateCommand.cs" />
+    <Compile Include="Commands\DecisionTableDetailsViewMoveConditionTopCommand.cs" />
+    <Compile Include="Commands\DecisionTableDetailsViewMoveActionBottomCommand.cs" />
+    <Compile Include="Commands\DecisionTableDetailsViewMoveActionDownCommand.cs" />
+    <Compile Include="Commands\DecisionTableDetailsViewMoveActionUpCommand.cs" />
+    <Compile Include="Commands\DecisionTableDetailsViewMoveConditionUpCommand.cs" />
+    <Compile Include="Commands\DecisionTableDetailsViewMoveConditionDownCommand.cs" />
+    <Compile Include="Commands\DecisionTableDetailsViewMoveConditionBottomCommand.cs" />
+    <Compile Include="Commands\DecisionTableDetailsViewMoveActionTopCommand.cs" />
+    <Compile Include="Commands\DecisionTableDetailsViewRemoveActionCommand.cs" />
+    <Compile Include="Commands\DecisionTableDetailsViewEditActionCommand.cs" />
+    <Compile Include="Commands\DecisionTableDetailsViewEditConditionCommand.cs" />
+    <Compile Include="Commands\DecisionTableDetailsViewNewActionCommand.cs" />
+    <Compile Include="Commands\DecisionTableDetailsViewNewConditionCommand.cs" />
+    <Compile Include="Commands\DecisionTableDetailsViewRemoveConditionCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\DecisionTableManagerViewEditDecisionTableCommand.cs" />
+    <Compile Include="Commands\DecisionTableManagerViewNewDecisionTableCommand.cs" />
+    <Compile Include="Commands\DecisionTableManagerViewRemoveDecisionTableCommand.cs" />
+    <Compile Include="Commands\DecisionTableManagerViewShowDecisionTableCommand.cs" />
+    <Compile Include="Commands\DecisionTableManagerViewShowDecisionTableDetailsCommand.cs" />
+    <Compile Include="Commands\RequirementManagerViewEditRequirementCommand.cs" />
+    <Compile Include="Commands\RequirementManagerViewNewRequirementCommand.cs" />
+    <Compile Include="Commands\RequirementManagerViewRemoveRequirementCommand.cs" />
+    <Compile Include="Commands\StartViewShowQuickTourCommand.cs" />
+    <Compile Include="AboutDialogModel.cs" />
+    <Compile Include="ConditionViewModel.cs" />
+    <Compile Include="ActionViewModel.cs" />
+    <Compile Include="ConditionDialogModel.cs" />
+    <Compile Include="ActionDialogModel.cs" />
+    <Compile Include="AddMissingRulesDialogModel.cs" />
+    <Compile Include="CheckForCompletenessDialogModel.cs" />
+    <Compile Include="CheckForRedundancyDialogModel.cs" />
+    <Compile Include="CheckForContradictionDialogModel.cs" />
+    <Compile Include="ContradictionViewModel.cs" />
+    <Compile Include="PrintDecisionTablesDialogModel.cs" />
+    <Compile Include="PrintPreviewDialogModel.cs" />
+    <Compile Include="PrintRequirementsDialogModel.cs" />
+    <Compile Include="SystemSubDecisionTableContainerViewModel.cs" />
+    <Compile Include="StatusViewModel.cs" />
+    <Compile Include="SystemActionViewModel.cs" />
+    <Compile Include="SystemConditionViewModel.cs" />
+    <Compile Include="SystemRequirementManagerViewModel.cs" />
+    <Compile Include="SystemDecisionTableManagerViewModel.cs" />
+    <Compile Include="SystemDecisionTableViewModel.cs" />
+    <Compile Include="SystemRequirementViewModel.cs" />
+    <Compile Include="RemoveContradictedRulesDialogModel.cs" />
+    <Compile Include="RemoveRedundantRulesDialogModel.cs" />
+    <Compile Include="ProjectViewModel.cs" />
+    <Compile Include="RecentProjectViewModel.cs" />
+    <Compile Include="RuleViewModel.cs" />
+    <Compile Include="RowViewModel.cs" />
+    <Compile Include="StateDialogModel.cs" />
+    <Compile Include="StateViewModel.cs" />
+    <Compile Include="DecisionTableDetailsViewModel.cs" />
+    <Compile Include="DecisionTableDialogModel.cs" />
+    <Compile Include="DecisionTableInfoViewModel.cs" />
+    <Compile Include="DecisionTableManagerViewModel.cs" />
+    <Compile Include="DecisionTableViewModel.cs" />
+    <Compile Include="RequirementDialogModel.cs" />
+    <Compile Include="SettingsViewModel.cs" />
+    <Compile Include="DocumentViewModel.cs" />
+    <Compile Include="RequirementViewModel.cs" />
+    <Compile Include="ProjectDialogModel.cs" />
+    <Compile Include="ProjectExplorerViewModel.cs" />
+    <Compile Include="RequirementManagerViewModel.cs" />
+    <Compile Include="StartViewModel.cs" />
+    <Compile Include="SystemProjectViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ContradictionGroup.cs" />
+    <Compile Include="Utils\DecisionTableViewModelUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\DockingLibrary\DockingLibrary\DockingLibrary.csproj">
+      <Project>{BCCC922F-2593-4484-8636-9703D97692AB}</Project>
+      <Name>DockingLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Extension Library\ExtensionLibrary.csproj">
+      <Project>{938F0AA9-6FD8-4DDC-802F-9D6900AFEE15}</Project>
+      <Name>ExtensionLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\FunctionalTree\FunctionalTreeLibrary\FunctionalTreeLibrary.csproj">
+      <Project>{528B7380-B2B8-4966-A28E-FA863FA76B6B}</Project>
+      <Name>FunctionalTreeLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTCore\DTCore.csproj">
+      <Project>{EC8EA4E9-DFAA-48E4-94C9-581ABE97427B}</Project>
+      <Name>DTCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTEnums\DTEnums.csproj">
+      <Project>{799A54DD-8063-43CF-8D95-65820A46BFE5}</Project>
+      <Name>DTEnums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewDatas\ViewDatas.csproj">
+      <Project>{0C1BA2CB-28E7-4407-87D0-2A7F116C4EF1}</Project>
+      <Name>ViewDatas</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

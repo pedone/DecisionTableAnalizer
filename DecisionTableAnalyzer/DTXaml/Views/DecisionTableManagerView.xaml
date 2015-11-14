@@ -1,0 +1,177 @@
+﻿<DockingLibrary:View x:Class="DTXaml.Views.DecisionTableManagerView"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:controls="clr-namespace:UICore.Resources.Controls;assembly=UICore"
+                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                     xmlns:DockingLibrary="clr-namespace:DockingLibrary;assembly=DockingLibrary"
+                     xmlns:dtcore="clr-namespace:DTCore;assembly=DTCore"
+                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                     d:DesignHeight="400"
+                     d:DesignWidth="600"
+                     Header="Decision Table Manager"
+                     mc:Ignorable="d">
+    <DockingLibrary:View.Resources>
+        <Style TargetType="{x:Type ListViewItem}">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            <EventSetter Event="PreviewMouseDown" Handler="DTItem_MouseDown" />
+        </Style>
+
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="Margin" Value="3" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+
+    </DockingLibrary:View.Resources>
+
+    <Grid Margin="3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="1.8*" />
+        </Grid.ColumnDefinitions>
+
+        <!--  DecisionTables Overview  -->
+        <Grid Grid.Column="0" Margin="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="1" Margin="0,3,3,3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Orientation="Horizontal">
+                    <controls:ToolButton Width="24"
+                                         Height="24"
+                                         Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.DecisionTableManagerViewNewDecisionTableCommand}"
+                                         CommandParameter="{Binding}"
+                                         DisabledIcon="pack://application:,,,/DTXaml;component/Content/Images/add_disabled.png"
+                                         Icon="pack://application:,,,/DTXaml;component/Content/Images/add.png"
+                                         ToolTip="New decision table" />
+                    <controls:ToolButton Width="24"
+                                         Height="24"
+                                         Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.DecisionTableManagerViewRemoveDecisionTableCommand}"
+                                         CommandParameter="{Binding}"
+                                         DisabledIcon="pack://application:,,,/DTXaml;component/Content/Images/delete_disabled.png"
+                                         Icon="pack://application:,,,/DTXaml;component/Content/Images/delete.png"
+                                         ToolTip="Delete decision table" />
+                    <controls:ToolButton Width="24"
+                                         Height="24"
+                                         Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.DecisionTableManagerViewEditDecisionTableCommand}"
+                                         CommandParameter="{Binding}"
+                                         DisabledIcon="pack://application:,,,/DTXaml;component/Content/Images/edit_disabled.png"
+                                         Icon="pack://application:,,,/DTXaml;component/Content/Images/edit.png"
+                                         ToolTip="Edit decision table" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="1"
+                            HorizontalAlignment="Right"
+                            Orientation="Horizontal">
+                    <controls:ToolButton Width="24"
+                                         Height="24"
+                                         Margin="5,0,0,0"
+                                         Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.DecisionTableManagerViewShowDecisionTableCommand}"
+                                         CommandParameter="{Binding}"
+                                         DisabledIcon="pack://application:,,,/DTXaml;component/Content/Images/table_goto_disabled.png"
+                                         Icon="pack://application:,,,/DTXaml;component/Content/Images/table_goto.png"
+                                         ToolTip="Show decision table" />
+                    <controls:ToolButton Width="24"
+                                         Height="24"
+                                         Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.DecisionTableManagerViewShowDecisionTableDetailsCommand}"
+                                         CommandParameter="{Binding}"
+                                         DisabledIcon="pack://application:,,,/DTXaml;component/Content/Images/table_info_disabled.png"
+                                         Icon="pack://application:,,,/DTXaml;component/Content/Images/table_info.png"
+                                         ToolTip="Show decision table details" />
+                </StackPanel>
+            </Grid>
+
+            <ListView Grid.Row="0"
+                      ItemsSource="{Binding DecisionTables}"
+                      SelectedItem="{Binding SelectedDecisionTable,
+                                             Mode=OneWayToSource}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="250"
+                                        DisplayMemberBinding="{Binding Name}"
+                                        Header="Decision Table" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+        </Grid>
+
+        <!--  DecisionTable Details  -->
+        <GroupBox Grid.Column="1"
+                  Margin="3"
+                  Header="Details">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <!--  Name  -->
+                    <TextBlock Grid.Row="0"
+                               Grid.Column="0"
+                               Style="{StaticResource TextBlockHeaderStyle}"
+                               Text="Name" />
+                    <TextBox Grid.Row="0"
+                             Grid.Column="1"
+                             IsReadOnly="True"
+                             Text="{Binding SelectedDecisionTable.Name}" />
+
+                    <!--  Condition Count  -->
+                    <TextBlock Grid.Row="1"
+                               Grid.Column="0"
+                               Style="{StaticResource TextBlockHeaderStyle}"
+                               Text="Condition Count" />
+                    <TextBox Grid.Row="1"
+                             Grid.Column="1"
+                             IsReadOnly="True"
+                             Text="{Binding SelectedDecisionTable.ConditionCount,
+                                            FallbackValue=''}">
+                    </TextBox>
+
+                    <!--  Action Count  -->
+                    <TextBlock Grid.Row="2"
+                               Grid.Column="0"
+                               Style="{StaticResource TextBlockHeaderStyle}"
+                               Text="Action Count" />
+                    <TextBox Grid.Row="2"
+                             Grid.Column="1"
+                             IsReadOnly="True"
+                             Text="{Binding SelectedDecisionTable.ActionCount,
+                                            FallbackValue=''}">
+                    </TextBox>
+
+                </Grid>
+
+                <!--  Description  -->
+                <TabControl Grid.Row="2" Margin="0,5">
+                    <TabItem Header="Description">
+                        <TextBox x:Name="tbDescription"
+                                 Grid.Row="1"
+                                 Margin="0"
+                                 IsReadOnly="True"
+                                 Text="{Binding SelectedDecisionTable.Description}" />
+                    </TabItem>
+                </TabControl>
+
+            </Grid>
+        </GroupBox>
+    </Grid>
+</DockingLibrary:View>

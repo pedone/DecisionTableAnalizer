@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="823bbe8e-a0e8-47a5-a561-5105890a4d97" name="ItemsGroup" linkedPackageId="730a7f66-0418-4f3f-ae34-3d5c52a2f830" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4b140afc-0158-481d-8e17-97cac61da8fd" name="BaseItemsGroup" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="55e14a56-8ac3-4e25-900e-a5df29f0d6fe" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2899a368-3b05-45da-bab3-0aaabfc161cb" name="ItemsGroup" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5931ccc0-866f-4c9b-92ab-e53200acb857" />
+        <generalsInternal>
+          <generalization Id="aa79dbc6-6f79-432d-a95c-48d1fc1b8a96" isSubstitutable="false">
+            <classMoniker Id="4b140afc-0158-481d-8e17-97cac61da8fd" LastKnownName="BaseItemsGroup" />
+            <elementDefinition Id="fc71ceb1-1d19-48fb-b49b-eff1ed6c3c45" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="155a2d4c-55a3-44fe-8ce6-f574d58b1802" name="Items" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="fac3479b-c836-4f1b-a044-23bdd2e2d8f7" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="2168fea4-9260-493f-82d7-d571d11f1538" LastKnownName="ObservableCollection&lt;T&gt;" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="966a10f1-5e41-4ae2-8de9-46f68977998d" name="ReadOnlyItemsGroup" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0b45025b-6454-4c0d-979c-d31dd9edbd61" />
+        <generalsInternal>
+          <generalization Id="9261e26c-fa4a-46d2-a679-453104143fa6" isSubstitutable="false">
+            <classMoniker Id="4b140afc-0158-481d-8e17-97cac61da8fd" LastKnownName="BaseItemsGroup" />
+            <elementDefinition Id="43aa8600-185f-45e0-8e9e-03a9ff420ab3" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="6f6892a4-ca30-4c6d-ac8f-4699d8b1cc16" name="Items" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="014b1a1a-9871-4a57-8146-519226a13349" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="849e9fc3-2799-4740-aaf6-3f09bcb69f32" LastKnownName="ReadOnlyObservableCollection&lt;T&gt;" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="55eefba2-0bda-4b33-b189-70a88302bb94" name="DockingItemsGroup" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e599758e-c70f-4460-9e87-35b36ecb82b3" />
+        <generalsInternal>
+          <generalization Id="7e385da5-2e94-4e3c-8c4f-cd99041cc764" isSubstitutable="false">
+            <classMoniker Id="2899a368-3b05-45da-bab3-0aaabfc161cb" LastKnownName="ItemsGroup" />
+            <elementDefinition Id="7ffbd81c-3abb-41ff-9691-84af02bc807f" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="ad2af1ff-949a-4e95-93d2-78ae1981bfc6" name="AutoClose" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6e99ab56-a789-4741-8620-7ce5abc419b6" />
+          </property>
+          <property Id="67e02363-6d70-4427-a65e-2dc465c8f2a6" name="PromoteItem" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a2d7b10d-cbf7-4a72-9311-ff03767f2ace" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="2168fea4-9260-493f-82d7-d571d11f1538" name="ObservableCollection&lt;T&gt;" isAbstract="false" isLeaf="false" cachedFullName="ObservableCollection&lt;T&gt;">
+        <elementDefinition Id="0f894e45-2a7f-4d79-b730-4b6fce2c0399" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="849e9fc3-2799-4740-aaf6-3f09bcb69f32" name="ReadOnlyObservableCollection&lt;T&gt;" isAbstract="false" isLeaf="false" cachedFullName="ReadOnlyObservableCollection&lt;T&gt;">
+        <elementDefinition Id="19b25aeb-f909-4ef5-8713-c85a471fcba4" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="3132dc7d-b816-426d-9634-ddeda46746b4" name="DockableItemsGroup" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0f7afca2-7ff0-48fa-9fb7-f10d8855dc5d" />
+        <generalsInternal>
+          <generalization Id="975e6063-ba55-4204-88b6-78a8cca7328d" isSubstitutable="false">
+            <classMoniker Id="55eefba2-0bda-4b33-b189-70a88302bb94" LastKnownName="DockingItemsGroup" />
+            <elementDefinition Id="bd09eff2-1c8c-4c3f-b365-62799faae31b" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="147444fe-e3b0-4000-9157-e26935c098f6" name="DockState" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="aa28e702-0736-41e8-a97f-23275c1e828d" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="730a7f66-0418-4f3f-ae34-3d5c52a2f830" name="DockingLibraryArchitecture">
+    <elementDefinition Id="219473a8-2a14-4fa5-954c-0aa372636908" />
+  </package>
+</logicalClassDesignerModel>

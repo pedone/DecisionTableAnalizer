@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5B250A75-4784-48E8-8152-83ABE954F6E1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DTXaml</RootNamespace>
+    <AssemblyName>DTXaml</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Converters\ReverseBoolConverter.cs" />
+    <Compile Include="Converters\SumUpConverter.cs" />
+    <Compile Include="Converters\FooConverter.cs" />
+    <Compile Include="Converters\IncreaseByOneConverter.cs" />
+    <Compile Include="Converters\DTRowBackgroundConverter.cs" />
+    <Compile Include="Converters\GreaterEqualZeroConverter.cs" />
+    <Compile Include="Converters\OrMultiValueConverter.cs" />
+    <Compile Include="Converters\StringIsNullOrEmptyConverter.cs" />
+    <Compile Include="ContradictionCellTemplateSelector.cs" />
+    <Compile Include="ContradictionSelectionHeaderTemplateSelector.cs" />
+    <Compile Include="Dialogs\PrintDecisionTablesDialog.xaml.cs">
+      <DependentUpon>PrintDecisionTablesDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\PrintPreviewDialog.xaml.cs">
+      <DependentUpon>PrintPreviewDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\PrintRequirementsDialog.xaml.cs">
+      <DependentUpon>PrintRequirementsDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementAndSubTableTemplateSelector.cs" />
+    <Compile Include="Dialogs\CheckForCompletenessDialog.xaml.cs">
+      <DependentUpon>CheckForCompletenessDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\CheckForRedundancyDialog.xaml.cs">
+      <DependentUpon>CheckForRedundancyDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\CheckForContradictionDialog.xaml.cs">
+      <DependentUpon>CheckForContradictionDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\RemoveContradictedRulesDialog.xaml.cs">
+      <DependentUpon>RemoveContradictedRulesDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\RemoveRedundantRulesDialog.xaml.cs">
+      <DependentUpon>RemoveRedundantRulesDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RuleSelectorHeaderTemplateSelector.cs" />
+    <Compile Include="DTReadOnlyCellTemplateSelector.cs" />
+    <Compile Include="Dialogs\AboutDialog.xaml.cs">
+      <DependentUpon>AboutDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ConditionDialog.xaml.cs">
+      <DependentUpon>ConditionDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AddMissingRulesDialog.xaml.cs">
+      <DependentUpon>AddMissingRulesDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\StateDialog.xaml.cs">
+      <DependentUpon>StateDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\DecisionTableDialog.xaml.cs">
+      <DependentUpon>DecisionTableDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ActionDialog.xaml.cs">
+      <DependentUpon>ActionDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ProjectDialog.xaml.cs">
+      <DependentUpon>ProjectDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\RequirementDialog.xaml.cs">
+      <DependentUpon>RequirementDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DTCellTemplateSelector.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\StatusView.xaml.cs">
+      <DependentUpon>StatusView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DecisionTableDetailsView.xaml.cs">
+      <DependentUpon>DecisionTableDetailsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DecisionTableManagerView.xaml.cs">
+      <DependentUpon>DecisionTableManagerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DecisionTableView.xaml.cs">
+      <DependentUpon>DecisionTableView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DocumentView.xaml.cs">
+      <DependentUpon>DocumentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProjectExplorerView.xaml.cs">
+      <DependentUpon>ProjectExplorerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RequirementManagerView.xaml.cs">
+      <DependentUpon>RequirementManagerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StartView.xaml.cs">
+      <DependentUpon>StartView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\QuickTour.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Page Include="Dialogs\AboutDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\ConditionDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\AddMissingRulesDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\CheckForCompletenessDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\CheckForRedundancyDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\CheckForContradictionDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\PrintDecisionTablesDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\PrintPreviewDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\PrintRequirementsDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\RemoveContradictedRulesDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\RemoveRedundantRulesDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\StateDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\DecisionTableDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\ActionDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\RequirementDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\StatusView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DecisionTableDetailsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DecisionTableManagerView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DecisionTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DocumentView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ProjectExplorerView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\RequirementManagerView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\StartView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Resource Include="Content\Images\add.png" />
+    <Page Include="Dialogs\ProjectDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Resource Include="Content\Images\table.png" />
+    <Resource Include="Views.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Images\add_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Images\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Images\delete_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Images\dtaScreenshot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Images\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Images\edit_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Images\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Images\table_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Images\table_add_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Images\table_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Images\table_delete_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Images\table_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Images\table_edit_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Images\table_goto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Images\table_goto_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Images\table_info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Images\table_info_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\DockingLibrary\DockingLibrary\DockingLibrary.csproj">
+      <Project>{BCCC922F-2593-4484-8636-9703D97692AB}</Project>
+      <Name>DockingLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Extension Library\ExtensionLibrary.csproj">
+      <Project>{938F0AA9-6FD8-4DDC-802F-9D6900AFEE15}</Project>
+      <Name>ExtensionLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\FunctionalTree\FunctionalTreeLibrary\FunctionalTreeLibrary.csproj">
+      <Project>{528B7380-B2B8-4966-A28E-FA863FA76B6B}</Project>
+      <Name>FunctionalTreeLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\HelperLibrary\HelperLibrary.csproj">
+      <Project>{77EE801E-5CD0-4800-89B2-21E3C723210D}</Project>
+      <Name>HelperLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTCore\DTCore.csproj">
+      <Project>{EC8EA4E9-DFAA-48E4-94C9-581ABE97427B}</Project>
+      <Name>DTCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTEnums\DTEnums.csproj">
+      <Project>{799A54DD-8063-43CF-8D95-65820A46BFE5}</Project>
+      <Name>DTEnums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UICore\UICore.csproj">
+      <Project>{7458EA97-C457-40F6-9279-FF4B52A3F300}</Project>
+      <Name>UICore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewModels\ViewModels.csproj">
+      <Project>{EC409C82-D144-4549-855B-6FDF496A290C}</Project>
+      <Name>ViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Images\convert_disabled.png" />
+    <Resource Include="Content\Images\convert.png" />
+    <Content Include="Content\Images\error.png" />
+    <Resource Include="Content\Images\table.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

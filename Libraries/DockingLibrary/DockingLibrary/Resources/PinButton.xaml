@@ -1,0 +1,210 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:local="clr-namespace:DockingLibrary"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style TargetType="{x:Type local:PinButton}">
+        <Setter Property="Background"
+                Value="{DynamicResource {x:Static local:DockingBrushes.PinButtonBackground}}"/>
+        <Setter Property="BorderBrush"
+                Value="{DynamicResource {x:Static local:DockingBrushes.PinButtonBorder}}"/>
+        <Setter Property="Height"
+                Value="15"/>
+        <Setter Property="Width"
+                Value="15"/>
+        <Setter Property="BorderThickness"
+                Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:PinButton}">
+                    <Grid x:Name="Grid">
+                        <Border x:Name="Border"
+                                Width="{TemplateBinding Width}"
+                                Height="{TemplateBinding Height}"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="{TemplateBinding Padding}"/>
+                        <Rectangle x:Name="ForegroundRectangle"
+                                   HorizontalAlignment="Stretch"
+                                   VerticalAlignment="Stretch"
+                                   Fill="{DynamicResource {x:Static local:DockingBrushes.PinButtonForeground}}"
+                                   OpacityMask="{TemplateBinding ForegroundOpacityMask}"/>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <!-- Normal -->
+                        <Trigger Property="IsActive" Value="True">
+                            <Setter Property="Fill"
+                                    TargetName="ForegroundRectangle"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.PinButtonActiveForeground}}"/>
+                            <Setter Property="Background"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.PinButtonActiveBackground}}"/>
+                            <Setter Property="BorderBrush"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.PinButtonActiveBorder}}"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="PinMode" Value="Normal"/>
+                                <Condition Property="IsMouseOver" Value="true"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.PinButtonMouseOverBackground}}"/>
+                            <Setter Property="BorderBrush"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.PinButtonMouseOverBorder}}"/>
+                            <Setter Property="Fill"
+                                    TargetName="ForegroundRectangle"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.PinButtonMouseOverForeground}}"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="PinMode" Value="Normal"/>
+                                <Condition Property="IsPressed" Value="true"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.PinButtonPressedBackground}}"/>
+                            <Setter Property="BorderBrush"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.PinButtonPressedBorder}}"/>
+                            <Setter Property="Fill"
+                                    TargetName="ForegroundRectangle"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.PinButtonPressedForeground}}"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="PinMode" Value="Normal"/>
+                                <Condition Property="KeepButtonPressed" Value="true"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.PinButtonPressedBackground}}"/>
+                            <Setter Property="BorderBrush"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.PinButtonPressedBorder}}"/>
+                            <Setter Property="Fill"
+                                    TargetName="ForegroundRectangle"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.PinButtonPressedForeground}}"/>
+                        </MultiTrigger>
+                        
+                        <!-- Document -->
+                        <Trigger Property="PinMode" Value="Document">
+                            <Setter Property="Fill"
+                                    TargetName="ForegroundRectangle"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.DocumentPinButtonForeground}}"/>
+                            <Setter Property="Background"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.DocumentPinButtonBackground}}"/>
+                            <Setter Property="BorderBrush"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.DocumentPinButtonBorder}}"/>
+                        </Trigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding PinMode, RelativeSource={RelativeSource Self}}" Value="Document"/>
+                                <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TabItem}}}" Value="true"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Fill"
+                                    TargetName="ForegroundRectangle"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.DocumentPinButtonSelectedForeground}}"/>
+                            <Setter Property="Background"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.DocumentPinButtonSelectedBackground}}"/>
+                            <Setter Property="BorderBrush"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.DocumentPinButtonSelectedBorder}}"/>
+                        </MultiDataTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="PinMode" Value="Document"/>
+                                <Condition Property="IsMouseOver" Value="true"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.DocumentPinButtonMouseOverBackground}}"/>
+                            <Setter Property="BorderBrush"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.DocumentPinButtonMouseOverBorder}}"/>
+                            <Setter Property="Fill"
+                                    TargetName="ForegroundRectangle"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.DocumentPinButtonMouseOverForeground}}"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="PinMode" Value="Document"/>
+                                <Condition Property="IsPressed" Value="true"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.DocumentPinButtonPressedBackground}}"/>
+                            <Setter Property="BorderBrush"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.DocumentPinButtonPressedBorder}}"/>
+                            <Setter Property="Fill"
+                                    TargetName="ForegroundRectangle"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.DocumentPinButtonPressedForeground}}"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="PinMode" Value="Document"/>
+                                <Condition Property="KeepButtonPressed" Value="true"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.DocumentPinButtonPressedBackground}}"/>
+                            <Setter Property="BorderBrush"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.DocumentPinButtonPressedBorder}}"/>
+                            <Setter Property="Fill"
+                                    TargetName="ForegroundRectangle"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.DocumentPinButtonPressedForeground}}"/>
+                        </MultiTrigger>
+
+                        <!-- Active Document -->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="PinMode" Value="Document"/>
+                                <Condition Property="IsActive" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.DocumentPinButtonActiveBackground}}"/>
+                            <Setter Property="BorderBrush"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.DocumentPinButtonActiveBorder}}"/>
+                            <Setter Property="Fill"
+                                    TargetName="ForegroundRectangle"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.DocumentPinButtonActiveForeground}}"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="PinMode" Value="Document"/>
+                                <Condition Property="IsActive" Value="True"/>
+                                <Condition Property="IsMouseOver" Value="true"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.DocumentPinButtonMouseOverActiveBackground}}"/>
+                            <Setter Property="BorderBrush"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.DocumentPinButtonMouseOverActiveBorder}}"/>
+                            <Setter Property="Fill"
+                                    TargetName="ForegroundRectangle"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.DocumentPinButtonMouseOverActiveForeground}}"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="PinMode" Value="Document"/>
+                                <Condition Property="IsActive" Value="True"/>
+                                <Condition Property="IsPressed" Value="true"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.DocumentPinButtonPressedActiveBackground}}"/>
+                            <Setter Property="BorderBrush"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.DocumentPinButtonPressedActiveBorder}}"/>
+                            <Setter Property="Fill"
+                                    TargetName="ForegroundRectangle"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.DocumentPinButtonPressedActiveForeground}}"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="PinMode" Value="Document"/>
+                                <Condition Property="IsActive" Value="True"/>
+                                <Condition Property="KeepButtonPressed" Value="true"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.DocumentPinButtonPressedActiveBackground}}"/>
+                            <Setter Property="BorderBrush"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.DocumentPinButtonPressedActiveBorder}}"/>
+                            <Setter Property="Fill"
+                                    TargetName="ForegroundRectangle"
+                                    Value="{DynamicResource {x:Static local:DockingBrushes.DocumentPinButtonPressedActiveForeground}}"/>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>

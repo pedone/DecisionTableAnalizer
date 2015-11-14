@@ -1,0 +1,15 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:UICore">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/UICore;component/Resources/BrushTheme1.xaml"/>
+        <!--<ResourceDictionary Source="/UICore;component/Resources/Brushes.xaml"/>-->
+        <ResourceDictionary Source="/UICore;component/Resources/Controls/DTCellComboBoxStyle.xaml"/>
+        <ResourceDictionary Source="/UICore;component/Resources/Controls/ToolButton.xaml"/>
+        <ResourceDictionary Source="/UICore;component/Resources/ButtonStyles.xaml"/>
+        <ResourceDictionary Source="/UICore;component/Resources/TabControlStyles.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

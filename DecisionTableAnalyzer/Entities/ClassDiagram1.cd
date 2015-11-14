@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Entities.DecisionTable">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAIACgAAQAABAAAAQAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DecisionTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entities.DecisionTableManager">
+    <Position X="9" Y="2" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgiAAAAAABAAAAAAAABAAAAAA=</HashCode>
+      <FileName>DecisionTableManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entities.DTAction">
+    <Position X="3.75" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAigAAAAAAAAAAQAAAAAAAAABAAAgAAAAAA=</HashCode>
+      <FileName>DTAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entities.DTCondition" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAigAAAAAAAAAAQAAAAAAAAABAAAgAAAAAA=</HashCode>
+      <FileName>DTCondition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entities.DTProject" Collapsed="true">
+    <Position X="3" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgQEAAAAAAAAQAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DTProject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entities.DTRule" Collapsed="true">
+    <Position X="4.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAACA=</HashCode>
+      <FileName>DTRule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entities.DTState" Collapsed="true">
+    <Position X="6.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DTState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entities.Requirement" Collapsed="true">
+    <Position X="3" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAADgAEAEAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Requirement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entities.RequirementManager" Collapsed="true">
+    <Position X="4.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQCAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>RequirementManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entities.SubDecisionTable">
+    <Position X="0.75" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAACAAAAAIAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SubDecisionTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

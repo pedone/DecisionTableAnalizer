@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="d9ae5f57-4dde-4e3b-918a-c52a83a084f4" name="Crucial Elements" linkedPackageId="a63cc69b-b986-4e31-b5d6-74978c50bdda" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b0a85d8c-0aa7-4037-b95e-c978d2f671ae" name="DockManager" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="02ee0958-4a91-4e8d-a0ca-bd9db3f85ae4" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e3de6d0d-e7fc-48a0-ad21-b3a9c2780021" name="AutoHideChannel" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e97b8f4e-c216-4f81-9c53-f54b8ba300ed" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="15ba21de-e62b-43e6-b800-c45c0a9b3d95" name="DockGroup" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b8929aa6-595f-49c7-86d5-2abdfcf04874" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d383b08b-7e9b-4c61-8a46-5b3671712ede" name="TabGroup" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="36463c4f-6cc6-4f15-8653-7f9c0daf2632" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f39b00a2-f765-416f-8f47-66266dabb599" name="DocumentGroup" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="58cd53bb-1fba-4e7e-a800-20b0c476321b" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="6504c7c9-54a3-462d-8b46-aa1628b7a66e" name="DocumentGroupContainer" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f5e6d439-0ee2-49aa-b7d4-e7d4da4861b6" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="906159c6-61e8-45af-9205-5af967e9df03" name="DockingWindow" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a1164b4b-2ac7-4665-9496-f9ed6c4b14a5" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="95935f4c-9fe7-42ae-a602-34c9d81545bb" name="View" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e7da0fa9-161a-449b-ba3c-0a828789c91d" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="a63cc69b-b986-4e31-b5d6-74978c50bdda" name="DockingLibraryArchitecture">
+    <elementDefinition Id="219473a8-2a14-4fa5-954c-0aa372636908" />
+  </package>
+</logicalClassDesignerModel>

@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="1ba7c97c-d16a-4602-9ba1-b729a69af8a5" name="View Architecture" linkedPackageId="ab9787af-c937-4577-8474-e18b8c4eb03e" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="8bd53686-4c42-4307-999a-eaaeb7739bb3">
+      <elementDefinition Id="81c2a38d-34db-424d-ae57-9445d21c69bc" />
+      <body>One ViewStore for every DockState possible</body>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e73250ab-414b-4e64-bf72-337f8f22a24f" name="View" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="83036180-92e0-4b1b-9220-abcfc7562b17" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e681cca3-7259-414f-a70a-d8e51c131e52" name="ViewStore" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d6298ad0-c1cd-41e8-9a58-48ea477b16af" />
+        <targetEnds>
+          <association Id="5f2174f1-2f0f-4cbb-a480-fdb13f5aeefe" isDerived="false" sourceEndRoleName="ActiveViewStore" targetEndRoleName="Views" isLeaf="false" isAbstract="false">
+            <classMoniker Id="e73250ab-414b-4e64-bf72-337f8f22a24f" LastKnownName="View" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9c2f7cfa-b625-4f6c-bfcd-4e92056626cf" name="ActiveViewStore" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="87b19d26-a649-4e49-a93e-c2f4517ec750" name="Lower" value="1">
+                      <elementDefinition Id="6e47d43f-ad15-4e8e-a56b-c0c2f0b5b713" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="15cd4de8-5309-4e4e-9847-cfb8287f8919" name="Upper" value="1">
+                      <elementDefinition Id="029e9638-0878-453a-ace8-7cc26266ee93" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="320c920e-1445-4510-8bac-fda425e8315e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="473229fd-d411-4167-bb61-caf13dc907a1" name="Views" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="4163cf57-a94e-4e2d-ac19-4d720028dc2f" name="Lower" value="*">
+                      <elementDefinition Id="bfc7606f-784b-4c99-ae97-5108823958f2" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="2422a306-7b14-48fa-9bba-8b6205a1779d" name="Upper" value="*">
+                      <elementDefinition Id="aebea2b5-f5dc-4e35-9f77-60ce157c3883" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="7bb0bcfd-19d5-4867-a24c-42fc79db3ad7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="afb70c1b-8c5f-486a-88f1-ec58eb986973" />
+          </association>
+          <association Id="3e3b3c72-9603-4fa4-9c76-423bf982afe4" isDerived="false" sourceEndRoleName="ViewStores" targetEndRoleName="View" isLeaf="false" isAbstract="false">
+            <classMoniker Id="e73250ab-414b-4e64-bf72-337f8f22a24f" LastKnownName="View" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="bf038411-2575-40f8-88cf-d08849f429bb" name="ViewStores" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="4baa4be1-02f8-4764-ae90-82ca11d9f73e" name="Lower" value="*">
+                      <elementDefinition Id="f1dbef17-72b9-4e71-8584-ff769860f506" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="d9065c0e-3203-43d4-9f3d-69e95578e791" name="Upper" value="*">
+                      <elementDefinition Id="e8277aaf-fcd7-4fdf-8305-04e39dd0f88b" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="b4fb1b1e-f627-477f-836c-e22a184b406b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f6fbc51e-2f94-4466-a3fb-938f55a7745c" name="View" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="fd9ebd65-4a52-4e65-b461-2211a9bfd986" name="Lower" value="*">
+                      <elementDefinition Id="59b977b7-98e7-4e05-baaa-9c611b14b361" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="24c5d066-fbeb-4302-98bd-10865aabd63d" name="Upper" value="*">
+                      <elementDefinition Id="268375d3-3aa6-42ed-a666-27deecefe0da" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="f5bf0c29-ec84-476a-b575-2797e01d32d2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b259746a-f73b-4716-935b-bd1024ee2ae9" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="c1c89695-2ec6-4ba7-8100-4ef5971f2e96" name="DockState" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="64e3c532-24c5-4306-a0a6-238f5e4322fd" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="3bef8a36-7f0c-4f77-94aa-5da6f739356e" name="TabGroup" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="69a1f34a-7947-4b5c-b1be-ac8dddcf6be9" />
+        <suppliersInternal>
+          <interfaceRealization Id="5eedc37d-917e-45ba-90db-c805f88eafc8">
+            <interfaceMoniker Id="e06ce586-ea5a-4623-b031-e6cf5e8d47cf" LastKnownName="IViewContainer" />
+            <elementDefinition Id="47dc7b14-7f0e-4c7b-b74d-c8491c8b6051" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <targetEnds>
+          <association Id="a427247d-c587-46dc-9713-0ec287a4e552" isDerived="false" sourceEndRoleName="Parent" targetEndRoleName="Views" isLeaf="false" isAbstract="false">
+            <classMoniker Id="e73250ab-414b-4e64-bf72-337f8f22a24f" LastKnownName="View" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="15e91c4f-923e-4f89-b24f-37ff65c4e9bf" name="Parent" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="de941f7d-fe16-42ed-848a-a8458f07040c" name="Lower" value="0">
+                      <elementDefinition Id="9ba13a0d-6ac0-46c8-a121-8c51eac3539a" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="4ad77fca-2999-436a-b07d-1c82bd5764e8" name="Upper" value="1">
+                      <elementDefinition Id="18b6f1f0-a236-4dea-9a09-2f14636fa53b" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="47aa44d7-7509-4fbf-80df-2caa693d2205" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2a182a72-8ce5-4ad9-b8da-0ec618d78fd8" name="Views" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="0e1c8c58-ff63-4f5a-95f5-7c4d28613a90" name="Lower" value="*">
+                      <elementDefinition Id="0723d767-f72a-40b9-bfb6-989e1264dfd7" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="0cb8de32-5599-46e8-a316-a763e67bff92" name="Upper" value="*">
+                      <elementDefinition Id="39047861-9e41-4b14-89ed-a3a320a2ac8f" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="c9138813-27e2-4f7e-b3a1-84f81211b256" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1e3ba056-feab-47da-a264-772340daa8c3" />
+          </association>
+          <association Id="9a4334d6-85c8-4785-8bd4-f597e589407c" isDerived="false" sourceEndRoleName="Owner" targetEndRoleName="ViewStore" isLeaf="false" isAbstract="false">
+            <classMoniker Id="e681cca3-7259-414f-a70a-d8e51c131e52" LastKnownName="ViewStore" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="31078906-a2e2-4376-a5f3-7679d08a7f97" name="Owner" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="166bd467-75d4-4a76-a416-1ca5837aeafa" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f50154c5-2eb1-428b-9383-e6e6ad911432" name="ViewStore" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="f4aa0c3e-c25b-468a-ad23-f7d47f74e241" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="90b0d3d3-66a8-4b60-9bcc-c5d453100083" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="24b7710a-d359-4393-8a9e-941770dcbb3b" name="DockState" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="af87ef2d-ade2-48e8-8862-6ba1c8bc4781" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="9d0714e4-1eb1-46a5-8a18-ad0b1a910d44" name="DockManager" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0517bf07-c27d-4508-a78f-81afa12846cf" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="721a22e0-8887-4db5-9ad4-3619285ba8ea" name="AutoHideChannel" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5e13bb2d-ac41-4792-914f-23660c88c930" />
+        <suppliersInternal>
+          <interfaceRealization Id="a60b98df-63ac-4dd0-be0b-1243bc7111f9">
+            <interfaceMoniker Id="e06ce586-ea5a-4623-b031-e6cf5e8d47cf" LastKnownName="IViewContainer" />
+            <elementDefinition Id="3e373445-c796-4965-b6df-546c4db9e26b" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <targetEnds>
+          <association Id="9493af63-a06a-415d-ba05-33dd53eea6dd" isDerived="false" sourceEndRoleName="Parent" targetEndRoleName="View" isLeaf="false" isAbstract="false">
+            <classMoniker Id="e73250ab-414b-4e64-bf72-337f8f22a24f" LastKnownName="View" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e4266ecf-d169-4087-b448-49d68fcdc2de" name="Parent" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="d5aaeafb-31b7-4538-9caf-fc7db419be45" name="Lower" value="0">
+                      <elementDefinition Id="93df1a7a-76ef-408c-a9d3-07b314312c42" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="c4db79c1-4e68-4ff9-82ed-bde210d3a4c2" name="Upper" value="1">
+                      <elementDefinition Id="49661660-ee11-4bd0-84bd-d9a3c9ab4f6e" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="26b550e8-3fdd-4391-ad9e-9eec5e7cbb41" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="52e4e9f8-668b-4087-a3bd-d15a98e8d5e0" name="View" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="cf2e04f1-3792-4535-8810-8c369d5b0625" name="Lower" value="*">
+                      <elementDefinition Id="376a7409-e486-4d19-bd0b-a4bef296737a" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="c212d197-e5af-40dd-a3f4-759deaf9df96" name="Upper" value="*">
+                      <elementDefinition Id="867c1fc2-087d-41fb-9bca-b934674a7992" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="72436c3a-3570-4a64-821d-dfc349ec3133" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="88ba5833-2ee8-486e-8758-f70a73cc90c2" />
+          </association>
+          <association Id="aedc0d91-fb31-40fb-b75f-572b796f1592" isDerived="false" sourceEndRoleName="Owner" targetEndRoleName="ViewStores" isLeaf="false" isAbstract="false">
+            <classMoniker Id="e681cca3-7259-414f-a70a-d8e51c131e52" LastKnownName="ViewStore" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="eea98ba3-fb5c-4cec-94c7-c27c6ed2ca03" name="Owner" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="680caf6b-54b2-4cfe-a493-66c3ba56dcc9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b38f5ab1-c1c4-40ef-b2de-feb89c48a7c0" name="ViewStores" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="55a32b2e-2642-430b-9632-721b685232bd" name="Lower" value="*">
+                      <elementDefinition Id="dc2fdbcf-5ea2-403a-8277-d6a78e1155c0" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="fb4346e5-2ed3-436f-86d2-aff41d4a06a0" name="Upper" value="*">
+                      <elementDefinition Id="38e79dc8-63e4-45c6-90fc-7cb11bffe1b4" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="81accfe7-5cbf-4df5-a2aa-a9887af40d32" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c2153add-e2ba-4a98-bff9-752494b3c8fe" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="927e1ae4-c6d2-4bb5-961d-9eb489d805ee" name="DockState" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="22749f90-c1f3-4f7c-8ea6-22bae5aed21d" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="e06ce586-ea5a-4623-b031-e6cf5e8d47cf" name="IViewContainer" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ade63930-764c-49b7-9246-11b892e35bae" />
+        <ownedAttributes>
+          <property Id="555234cc-f19c-4e27-8540-972c3b19e9f2" name="DockState" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8cc0fe49-803c-4ca0-acad-6b158462b220" />
+          </property>
+          <property Id="ad5fa926-a195-4747-8c6f-cfc447f73bde" name="DockManager" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d2fd4f51-7021-4110-8cd0-b80affb16d86" />
+          </property>
+        </ownedAttributes>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="ab9787af-c937-4577-8474-e18b8c4eb03e" name="DockingLibraryArchitecture">
+    <elementDefinition Id="219473a8-2a14-4fa5-954c-0aa372636908" />
+  </package>
+</logicalClassDesignerModel>

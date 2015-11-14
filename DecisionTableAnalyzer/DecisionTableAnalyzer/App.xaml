@@ -1,0 +1,15 @@
+﻿<Application x:Class="DecisionTableAnalyzer.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:DockingLibrary="clr-namespace:DockingLibrary;assembly=DockingLibrary"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UICore;component/Themes/Generic.xaml" />
+                <ResourceDictionary Source="/DTXaml;component/Resources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

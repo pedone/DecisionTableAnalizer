@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="834299aa-6356-4d05-8718-0a77b3bab1e6" name="AutoHideChannel" linkedPackageId="4c8eb132-d513-4314-a807-322d5524037e" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="21d5794a-4ec4-48de-84bc-8179fd1a4997" name="AutoHideChannel" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="95aa91da-9965-46c6-87c9-c37fcd80e3aa" />
+        <targetEnds>
+          <association Id="b5b5deba-5109-4a89-a0ba-15a19d7bb31d" isDerived="false" sourceEndRoleName="AutoHideChannel" targetEndRoleName="View" isLeaf="false" isAbstract="false">
+            <classMoniker Id="0c1c167f-cc60-4126-a9f6-c14175d1f129" LastKnownName="View" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7a1a6e5d-9a69-4cb5-88fd-8235fcaaa14f" name="AutoHideChannel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="eff9d8c5-30a1-4acb-acbc-ea63467910b1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9579728b-d616-4336-812a-dbeb6054975f" name="View" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="88d9e3f1-e212-4a2e-8913-266efad55a6b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="eb0b7dcf-554c-4ef8-b046-322b77ed63e0" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="60123b99-bac9-4c68-bafc-085650a3b2a7" name="Dock" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="32827eea-94f9-40e1-bb2e-89ab6488eede" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="0c1c167f-cc60-4126-a9f6-c14175d1f129" name="View" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="10e7c360-01ca-4e56-957d-a833983bf224" />
+        <generalsInternal>
+          <generalization Id="b5afb6a5-2886-42ab-bc1a-81c5098e0fef" isSubstitutable="false">
+            <classMoniker Id="4a07469f-92da-4fa8-941c-205c3dc3d3a0" LastKnownName="DockingContent" />
+            <elementDefinition Id="abeae252-0995-498b-8b8a-983244a267cb" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="204aac93-1216-4723-bfad-1d9bf40a628d" name="Header" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a73a283b-0917-4198-9bda-605db7b628ef" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="29623f8d-a0df-4180-921b-5ae69683194e" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+          <property Id="c4ff12a3-5c8a-496f-addd-dc076beb51cc" name="DockPosition" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b3653031-2a76-41e5-a5a9-ca8353657966" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="d9c7108c-648f-4c24-80aa-3ae19a63140b" LastKnownName="DockPosition" />
+            </type_NamedElement>
+          </property>
+          <property Id="26e36cc5-fb1f-4e09-b6dd-1a59f61b663f" name="DockState" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="2edcac65-bff2-4137-8c36-22117cee5106" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="29623f8d-a0df-4180-921b-5ae69683194e" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="49ab017f-dc09-4d38-bd8f-c8de78f3b484" name="DockManager" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e01aa685-4166-4a92-bcf9-3a5625667402" />
+        <targetEnds>
+          <association Id="0a65e550-a2b5-42dc-8483-73d28af85d93" isDerived="false" sourceEndRoleName="DockManager" targetEndRoleName="AutoHideChannel" isLeaf="false" isAbstract="false">
+            <classMoniker Id="21d5794a-4ec4-48de-84bc-8179fd1a4997" LastKnownName="AutoHideChannel" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="bda240fe-58c0-4ed5-8abb-b033f874f311" name="DockManager" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="009dd232-7a0e-49f0-93b1-ec4e19e17020" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d8418045-df53-419e-a75a-4dba90d5fbef" name="AutoHideChannel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <lowerValueInternal>
+                    <literalString Id="f0867b99-6bda-485b-bc0c-b8357af4d4b8" name="Lower" value="*">
+                      <elementDefinition Id="5202ae46-cdfd-46d1-aa0d-6f493adb495b" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="2448a686-3ed7-4139-86be-15d069674013" name="Upper" value="*">
+                      <elementDefinition Id="4896bcbd-a460-44e9-99fd-a81527d587e5" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="2584c645-938d-4db3-ab13-b3b731d320d2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="4051319e-31b6-453b-a0e1-0f39b6004b57" />
+          </association>
+          <association Id="e5bd77a9-8bac-4f04-ac1a-0a2f47a84ad8" isDerived="false" sourceEndRoleName="DockManager" targetEndRoleName="DockingContent" isLeaf="false" isAbstract="false">
+            <classMoniker Id="4a07469f-92da-4fa8-941c-205c3dc3d3a0" LastKnownName="DockingContent" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fd7f0932-ef63-4949-92af-efe1ab590dee" name="DockManager" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a4a9a30c-caf7-46dc-8f35-e6aa9ebaf874" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8d707160-464a-43a6-ae7d-3451df61339a" name="DockingContent" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="79a0a0f6-3c75-4c98-98de-4f6712556c93" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d685637c-1f76-4bf2-8fb6-6477ad912c69" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="f2ffa98c-255d-47e5-af93-5c98ea8d41e7" name="Views" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="bba5be2a-d326-40dd-a485-76582fe558f1" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4a07469f-92da-4fa8-941c-205c3dc3d3a0" name="DockingContent" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="69844abb-cff5-4dcf-9ce8-18f262ec7b35" />
+        <ownedAttributesInternal>
+          <property Id="9e988436-0db8-4926-ba97-a9f4e72e9a95" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d1733658-59bc-47bf-aa85-5ded78931982" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="4eb9b655-d10d-44be-b9dd-6d62dbae49ae" LastKnownName="Integer" />
+            </type_NamedElement>
+          </property>
+          <property Id="4147912f-6e3a-4034-8fa4-cba13d490c17" name="ParentContent" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="2e90f9e0-f1b9-4fb9-815f-fb5434eafa0f" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="fe41457a-749b-4bdd-848e-c3c0627b3bdb" LastKnownName="DockingContent" />
+            </type_NamedElement>
+          </property>
+          <property Id="8e989bae-0ce1-4f7f-aa3b-21694f217ff9" name="IsTopContent" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e7fb1316-16c7-497e-a2ea-7d19e1faf6da" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="ed9bfaac-59c8-4956-8f1a-40dc876eb98b" LastKnownName="Boolean" />
+            </type_NamedElement>
+          </property>
+          <property Id="8cdbbbda-65e6-4b1e-961d-a6a15fc80bfd" name="IsActive" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="2a4a2b51-6fc6-4bba-83fb-5ab131c052c6" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="ed9bfaac-59c8-4956-8f1a-40dc876eb98b" LastKnownName="Boolean" />
+            </type_NamedElement>
+          </property>
+          <property Id="2fd1fdd1-bbdf-4dcc-b8d0-42caac3b1b6e" name="Width" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b316e81f-23d6-41d2-b1de-aa96591184d6" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="4eb9b655-d10d-44be-b9dd-6d62dbae49ae" LastKnownName="Integer" />
+            </type_NamedElement>
+          </property>
+          <property Id="6cbf41f2-4107-40aa-9fdf-b0f16e18d5f9" name="Height" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a124bdaf-05c3-418d-8156-0f983d1b8784" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="4eb9b655-d10d-44be-b9dd-6d62dbae49ae" LastKnownName="Integer" />
+            </type_NamedElement>
+          </property>
+          <property Id="aaa3b236-daf5-45e2-9774-6a12917e9d24" name="AutoHideDock" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c4c155de-f28a-4696-aaa7-5ce0fa6bf337" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="4eb9b655-d10d-44be-b9dd-6d62dbae49ae" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="fe41457a-749b-4bdd-848e-c3c0627b3bdb" name="DockingContent" isAbstract="false" isLeaf="false" cachedFullName="DockingLibraryArchitecture::DockingContent">
+        <elementDefinition Id="69844abb-cff5-4dcf-9ce8-18f262ec7b35" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ed9bfaac-59c8-4956-8f1a-40dc876eb98b" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="d9c7108c-648f-4c24-80aa-3ae19a63140b" name="DockPosition" isAbstract="false" isLeaf="false" cachedFullName="DockingLibraryArchitecture::DockPosition">
+        <elementDefinition Id="c3fff3fc-3a11-4683-a917-5ebecc38296e" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="4c8eb132-d513-4314-a807-322d5524037e" name="DockingLibraryArchitecture">
+    <elementDefinition Id="219473a8-2a14-4fa5-954c-0aa372636908" />
+  </package>
+</logicalClassDesignerModel>

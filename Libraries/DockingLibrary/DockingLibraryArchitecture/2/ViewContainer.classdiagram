@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="7be26341-6be2-487d-847a-57f151369ed8" name="ViewContainer" linkedPackageId="50f23caa-0c27-4cc9-833c-1b803fb66c3b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4eedca92-ce96-40de-aa1f-851db42e109f" name="DockingItemsControl" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="9a631ede-401a-4b0c-b629-db8ec47c1246" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="229ba071-6cd6-4ab9-ba41-6fdbe4d42e58" name="TabGroup" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ca6a699e-4eb1-455e-9983-bb8a31e82756" />
+        <suppliersInternal>
+          <interfaceRealization Id="f44b891e-449d-4453-bc05-a1952deb8ca8">
+            <interfaceMoniker Id="a7160773-5304-40d2-9546-63a3fbc94a6a" LastKnownName="IViewContainer" />
+            <elementDefinition Id="76c90ce1-ff5e-4ec1-ae88-f462ff5e7ab5" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="9bffd93b-12cd-4cc5-94fe-19284455e8ab" isSubstitutable="false">
+            <classMoniker Id="4eedca92-ce96-40de-aa1f-851db42e109f" LastKnownName="DockingItemsControl" />
+            <elementDefinition Id="cb2ec6ff-28e9-4095-aacf-13ecc65968ad" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="813f64db-6794-4456-9861-25e1d2e5b029" name="DocumentGroup" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d2802fed-a1d4-4d7a-a01a-09e63cad7bd7" />
+        <generalsInternal>
+          <generalization Id="b7678636-2aa5-43af-bdae-5d4c556e6185" isSubstitutable="false">
+            <classMoniker Id="229ba071-6cd6-4ab9-ba41-6fdbe4d42e58" LastKnownName="TabGroup" />
+            <elementDefinition Id="2431b713-5c19-46ee-8d54-eb36328dc40c" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e18b83f4-b097-4e5b-8804-598ccbf7d177" name="AutoHideChannel" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e46ca3e2-ef73-4a19-8a45-25778571c83a" />
+        <suppliersInternal>
+          <interfaceRealization Id="37655520-8101-4440-90a2-edc359785ebd">
+            <interfaceMoniker Id="a7160773-5304-40d2-9546-63a3fbc94a6a" LastKnownName="IViewContainer" />
+            <elementDefinition Id="90861164-b7af-430d-974a-44274cd1bd48" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="a7160773-5304-40d2-9546-63a3fbc94a6a" name="IViewContainer" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ade63930-764c-49b7-9246-11b892e35bae" />
+        <ownedAttributes>
+          <property Id="f2b83eec-bfa6-41a2-8a08-2af25307ee7e" name="DockState" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8cc0fe49-803c-4ca0-acad-6b158462b220" />
+          </property>
+          <property Id="287ad3f8-7fd1-4587-a54a-6785658a9bb8" name="DockManager" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d2fd4f51-7021-4110-8cd0-b80affb16d86" />
+          </property>
+        </ownedAttributes>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="50f23caa-0c27-4cc9-833c-1b803fb66c3b" name="DockingLibraryArchitecture">
+    <elementDefinition Id="219473a8-2a14-4fa5-954c-0aa372636908" />
+  </package>
+</logicalClassDesignerModel>

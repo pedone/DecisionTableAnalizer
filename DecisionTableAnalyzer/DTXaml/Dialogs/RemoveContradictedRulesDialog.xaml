@@ -1,0 +1,148 @@
+﻿<Window x:Class="DTXaml.Dialogs.RemoveContradictedRulesDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:converters="clr-namespace:DTXaml.Converters"
+        xmlns:dtcore="clr-namespace:DTCore;assembly=DTCore"
+        Title="Remove contradicted Rules"
+        Width="600"
+        Height="480"
+        Icon="pack://application:,,,/DTXaml;component/Content/Images/table.png"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterOwner">
+    <Window.Resources>
+        <converters:DTRowBackgroundConverter x:Key="DTRowBackgroundConverter" />
+        <converters:IncreaseByOneConverter x:Key="IncreaseByOneConverter" />
+        <converters:FooConverter x:Key="FooConverter" />
+    </Window.Resources>
+    <Grid Margin="3">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <DataGrid Grid.Row="0"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  CanUserReorderColumns="False"
+                  CanUserResizeColumns="True"
+                  CanUserResizeRows="False"
+                  CanUserSortColumns="False"
+                  DataContext="{Binding Rows}"
+                  DataContextChanged="DataGridRules_DataContextChanged"
+                  FrozenColumnCount="1"
+                  HorizontalGridLinesBrush="DarkGray"
+                  IsReadOnly="True"
+                  ItemsSource="{Binding}"
+                  SelectionMode="Single"
+                  SelectionUnit="Cell"
+                  VerticalGridLinesBrush="DarkGray">
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                    <Setter Property="VerticalContentAlignment" Value="Center" />
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.RowStyle>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <Setter Property="Background" Value="{Binding Path=., Converter={StaticResource DTRowBackgroundConverter}}" />
+                </Style>
+            </DataGrid.RowStyle>
+            <DataGrid.CellStyle>
+                <Style TargetType="{x:Type DataGridCell}">
+                    <Setter Property="Background" Value="Transparent" />
+                    <Setter Property="Foreground" Value="Black" />
+                </Style>
+            </DataGrid.CellStyle>
+            <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock MinWidth="150"
+                                       Margin="5,2,0,2"
+                                       VerticalAlignment="Center"
+                                       Text="{Binding Header.Name}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <TextBlock Grid.Row="1"
+                   Margin="0,10,0,3"
+                   Text="Select the contradicted rules to remove:" />
+
+        <DataGrid Grid.Row="2"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  CanUserReorderColumns="False"
+                  CanUserResizeColumns="False"
+                  CanUserResizeRows="False"
+                  CanUserSortColumns="False"
+                  DataContext="{Binding ContradictionTable}"
+                  DataContextChanged="DataGridContradictions_DataContextChanged"
+                  FrozenColumnCount="1"
+                  HorizontalGridLinesBrush="DarkGray"
+                  IsReadOnly="True"
+                  ItemsSource="{Binding}"
+                  SelectionMode="Single"
+                  SelectionUnit="Cell"
+                  VerticalGridLinesBrush="DarkGray">
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                    <Setter Property="VerticalContentAlignment" Value="Center" />
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.CellStyle>
+                <Style TargetType="{x:Type DataGridCell}">
+                    <Setter Property="Background" Value="Transparent" />
+                    <Setter Property="Foreground" Value="Black" />
+                </Style>
+            </DataGrid.CellStyle>
+            <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <CheckBox VerticalAlignment="Center" IsChecked="{Binding Header.IsSelected, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,0,0" />
+                                <TextBlock MinWidth="20"
+                                           Margin="8,2,0,2"
+                                           VerticalAlignment="Center"
+                                           Text="{Binding Header.Index,
+                                                          Converter={StaticResource IncreaseByOneConverter}}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0"
+                       Margin="3"
+                       Text="{Binding RemainingContradictedRulesCount,
+                                      StringFormat='Remaining contradictions: {0}'}" />
+
+            <StackPanel Grid.Column="1"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+                <Button Click="OK_Click"
+                        Content="OK"
+                        IsDefault="True" />
+                <Button Click="Cancel_Click"
+                        Content="Cancel"
+                        IsCancel="True" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,167 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:localControls="clr-namespace:UICore.Resources.Controls">
+
+    <SolidColorBrush x:Key="WindowBackgroundBrush" Color="#FFF" />
+
+    <LinearGradientBrush x:Key="MouseOverBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Offset="0.0" Color="#FFF" />
+        <GradientStop Offset="1.0" Color="#AAA" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="PressedBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Offset="0.0" Color="#BBB" />
+        <GradientStop Offset="0.1" Color="#EEE" />
+        <GradientStop Offset="0.9" Color="#EEE" />
+        <GradientStop Offset="1.0" Color="#FFF" />
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="SolidBorderBrush" Color="#888" />
+
+    <LinearGradientBrush x:Key="NormalBorderBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Offset="0.0" Color="#CCC" />
+        <GradientStop Offset="1.0" Color="#444" />
+    </LinearGradientBrush>
+
+
+    <ControlTemplate x:Key="ConditionToggleButtonControlTemplate" TargetType="{x:Type ToggleButton}">
+        <Grid>
+
+            <Rectangle x:Name="Rectangle"
+                       HorizontalAlignment="Stretch"
+                       Fill="Transparent" />
+            <Path x:Name="Arrow"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center"
+                  Data="M 0 0 L 12 4 L 24 0 Z"
+                  Fill="Black" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter TargetName="Rectangle" Property="Fill" Value="{StaticResource MouseOverBrush}" />
+            </Trigger>
+            <Trigger Property="IsChecked" Value="true">
+                <Setter TargetName="Rectangle" Property="Fill" Value="{StaticResource PressedBrush}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type localControls:DTCellComboBox}">
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type localControls:DTCellComboBox}">
+                    <Grid x:Name="Grid" Background="Transparent">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <!--  The ToggleButton is databound to the ComboBox itself to toggle IsDropDownOpen  -->
+
+                        <ContentPresenter x:Name="ContentSite"
+                                          Margin="3,3,3,0"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          Content="{TemplateBinding SelectionBoxItem}"
+                                          ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                          ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                                          IsHitTestVisible="False" />
+                        <ToggleButton x:Name="ToggleButton"
+                                      Grid.Row="1"
+                                      Height="7"
+                                      ClickMode="Press"
+                                      Focusable="false"
+                                      IsChecked="{Binding IsDropDownOpen,
+                                                          Mode=TwoWay,
+                                                          RelativeSource={RelativeSource TemplatedParent}}"
+                                      Opacity="0"
+                                      Template="{StaticResource ConditionToggleButtonControlTemplate}" />
+
+                        <TextBox x:Name="PART_EditableTextBox"
+                                 Margin="3,3,23,3"
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center"
+                                 Background="Transparent"
+                                 Focusable="True"
+                                 IsReadOnly="{TemplateBinding IsReadOnly}"
+                                 Style="{x:Null}"
+                                 Visibility="Hidden" />
+
+                        <!--  The Popup shows the list of items in the ComboBox. IsOpen is databound to IsDropDownOpen which is toggled via the ComboBoxToggleButton  -->
+                        <Popup x:Name="Popup"
+                               AllowsTransparency="True"
+                               Focusable="False"
+                               IsOpen="{TemplateBinding IsDropDownOpen}"
+                               Placement="Bottom"
+                               PopupAnimation="None">
+                            <Grid x:Name="DropDown"
+                                  MinWidth="{TemplateBinding ActualWidth}"
+                                  MaxHeight="{TemplateBinding MaxDropDownHeight}"
+                                  SnapsToDevicePixels="True">
+                                <Border x:Name="DropDownBorder"
+                                        Background="{StaticResource WindowBackgroundBrush}"
+                                        BorderBrush="{StaticResource SolidBorderBrush}"
+                                        BorderThickness="1" />
+                                <ScrollViewer Margin="4,6,4,6"
+                                              CanContentScroll="True"
+                                              HorizontalScrollBarVisibility="Auto"
+                                              SnapsToDevicePixels="True"
+                                              VerticalScrollBarVisibility="Auto">
+
+                                    <!--  The StackPanel is used to display the children by setting IsItemsHost to be True  -->
+                                    <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
+
+                                </ScrollViewer>
+                            </Grid>
+                        </Popup>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation AccelerationRatio="0.9"
+                                                     Duration="0:0:2"
+                                                     Storyboard.TargetName="ToggleButton"
+                                                     Storyboard.TargetProperty="Opacity"
+                                                     To="0.8" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Duration="0:0:0.3"
+                                                     Storyboard.TargetName="ToggleButton"
+                                                     Storyboard.TargetProperty="Opacity"
+                                                     To="0.0" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <!--
+                            <Trigger SourceName="Grid" Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ToggleButton" Property="Visibility" Value="Visible" />
+                            </Trigger>
+                        -->
+                        <!--  This forces the DropDown to have a minimum size if it is empty  -->
+                        <Trigger Property="HasItems" Value="false">
+                            <Setter TargetName="DropDownBorder" Property="MinHeight" Value="95" />
+                        </Trigger>
+                        <Trigger Property="IsGrouping" Value="true">
+                            <Setter Property="ScrollViewer.CanContentScroll" Value="false" />
+                        </Trigger>
+                        <Trigger SourceName="Popup" Property="AllowsTransparency" Value="true">
+                            <Setter TargetName="DropDownBorder" Property="CornerRadius" Value="4" />
+                            <Setter TargetName="DropDownBorder" Property="Margin" Value="0,2,0,0" />
+                        </Trigger>
+                        <Trigger Property="IsEditable" Value="true">
+                            <Setter Property="IsTabStop" Value="false" />
+                            <Setter TargetName="PART_EditableTextBox" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="ContentSite" Property="Visibility" Value="Hidden" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,17 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DockingLibrary;component/Resources/BrushCombos/Combo108Brushes.xaml"/>
+        <ResourceDictionary Source="/DockingLibrary;component/Resources/AutoHideChannel.xaml"/>
+        <ResourceDictionary Source="/DockingLibrary;component/Resources/DockGroup.xaml"/>
+        <ResourceDictionary Source="/DockingLibrary;component/Resources/DockManager.xaml"/>
+        <ResourceDictionary Source="/DockingLibrary;component/Resources/DockTarget.xaml"/>
+        <ResourceDictionary Source="/DockingLibrary;component/Resources/DocumentGroup.xaml"/>
+        <ResourceDictionary Source="/DockingLibrary;component/Resources/DocumentGroupContainer.xaml"/>
+        <ResourceDictionary Source="/DockingLibrary;component/Resources/PinButton.xaml"/>
+        <ResourceDictionary Source="/DockingLibrary;component/Resources/TabGroup.xaml"/>
+        <ResourceDictionary Source="/DockingLibrary;component/Resources/View.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

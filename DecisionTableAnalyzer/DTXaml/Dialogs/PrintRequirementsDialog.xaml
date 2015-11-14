@@ -1,0 +1,160 @@
+﻿<Window x:Class="DTXaml.Dialogs.PrintRequirementsDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dtcore="clr-namespace:DTCore;assembly=DTCore"
+        Title="Print Requirements"
+        Width="600"
+        Height="480"
+        MinWidth="300"
+        MinHeight="300"
+        Icon="pack://application:,,,/DTXaml;component/Content/Images/table.png"
+        ResizeMode="CanResize"
+        WindowStartupLocation="CenterOwner">
+    <Window.Resources>
+        <DataTemplate x:Key="SelectableRequirementTemplate">
+            <StackPanel Orientation="Horizontal">
+                <CheckBox Margin="5,0,0,0"
+                          VerticalAlignment="Center"
+                          IsChecked="{Binding IsSelected,
+                                              UpdateSourceTrigger=PropertyChanged}" />
+                <TextBlock MinWidth="20"
+                           Margin="8,0,0,0"
+                           VerticalAlignment="Center"
+                           Text="{Binding Name}" />
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+    
+    <Grid Margin="3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="1.2*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!--  Requirements Overview  -->
+        <Grid Grid.Column="0" Margin="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <ListView Grid.Row="0"
+                      ItemsSource="{Binding FunctionalRequirements}"
+                      SelectedItem="{Binding SelectedRequirement,
+                                             Mode=OneWayToSource}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="200"
+                                        CellTemplate="{StaticResource SelectableRequirementTemplate}"
+                                        Header="Functional Requirement" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <ListView Grid.Row="1"
+                      Margin="0,3,0,0"
+                      ItemsSource="{Binding NonFunctionalRequirements}"
+                      SelectedItem="{Binding SelectedRequirement,
+                                             Mode=OneWayToSource}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="200"
+                                        CellTemplate="{StaticResource SelectableRequirementTemplate}"
+                                        Header="NonFunctional Requirement" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+        </Grid>
+
+        <!--  Requirement Details  -->
+        <GroupBox Grid.Column="1"
+                  Margin="3"
+                  Header="Details">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <!--  Name  -->
+                    <TextBlock Grid.Row="0"
+                               Grid.Column="0"
+                               Style="{StaticResource TextBlockHeaderStyle}"
+                               Text="Name" />
+                    <TextBox Grid.Row="0"
+                             Grid.Column="1"
+                             IsReadOnly="True"
+                             Text="{Binding SelectedRequirement.Name}" />
+
+                    <!--  Priority  -->
+                    <TextBlock Grid.Row="1"
+                               Grid.Column="0"
+                               Style="{StaticResource TextBlockHeaderStyle}"
+                               Text="Priority" />
+                    <TextBox Grid.Row="2"
+                             Grid.Column="1"
+                             IsReadOnly="True"
+                             Text="{Binding SelectedRequirement.Priority}" />
+                </Grid>
+
+                <!--  Description  -->
+                <TabControl Grid.Row="2" Margin="0,5">
+                    <TabItem Header="Description">
+                        <TextBox Grid.Row="1"
+                                 Margin="0"
+                                 IsReadOnly="True"
+                                 Text="{Binding SelectedRequirement.Description}" />
+                    </TabItem>
+                </TabControl>
+
+            </Grid>
+        </GroupBox>
+
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+                <Button Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.PrintRequirementsDialogSelectAllCommand}"
+                        CommandParameter="{Binding}"
+                        Content="Select all"
+                        IsDefault="True" />
+                <Button Command="{dtcore:ViewModelCommand FullName=ViewModels.Commands.PrintRequirementsDialogSelectNoneCommand}"
+                        CommandParameter="{Binding}"
+                        Content="Select none"
+                        IsCancel="True" />
+            </StackPanel>
+            <StackPanel Grid.Column="1"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+                <Button Click="Print_Click"
+                        Content="Print"
+                        IsDefault="True" />
+                <Button Click="Cancel_Click"
+                        Content="Cancel"
+                        IsCancel="True" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
